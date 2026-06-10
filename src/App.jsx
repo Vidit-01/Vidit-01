@@ -26,67 +26,52 @@ const publications = [
 
 const projects = [
   {
-    id: 'attention-geometry-dynamics',
-    type: 'Interactive Visualization',
-    title: 'Attention-Geometry-Dynamics',
+    id: 'api-drift-agent',
+    type: 'Developer Tool',
+    title: 'API-Drift-Agent',
     description:
-      'An interactive playground for visualizing how different attention heads interact within a geometric space. This project investigates the spatial emergent properties of multi-head structures in large language models.',
-    tags: ['WebGL', 'PyTorch'],
-    image: 'https://images.unsplash.com/photo-1635070041078-e363dbe005cb?auto=format&fit=crop&w=1200&q=80',
+      'A CLI tool that detects drift between an OpenAPI 3.x contract and a live FastAPI codebase. Built around two layers: a deterministic static analyzer that classifies exact contract differences and an agent explanation layer using LangChain that reasons about whether the spec or the code should be treated as source of truth.',
+    tags: ['Tools', 'Langchain'],
+    image: 'https://raw.githubusercontent.com/Vidit-01/api-drift-agent/refs/heads/main/assets/first.gif',
     caption: 'Fig 5.1 / Attention Manifold Reconstruction',
     feature: true,
   },
   {
     id: 'systems-from-scratch',
-    type: 'System',
+    type: 'Systems',
     title: 'Systems-from-Scratch',
-    quote: 'Optimizing at the metal is the only way to truly understand the spirit of the machine.',
     description:
-      'A pedagogical archive documenting the construction of a custom neural inference engine from the ground up.',
+    'A personal project of building various systems which developers interact with from ground up. The aim of this project was to understand the systems which abstraction hides. Currently Data Structures, HTTP Server and Storage Engine were made.',
     tags: ['System', 'C++'],
     repository: true,
   },
-  {
-    id: 'api-drift-agent',
-    type: 'Project_Log.log',
-    title: 'API-Drift-Agent',
-    description:
-      'A research tool for monitoring and mitigating distribution shift in production LLM APIs. Implements real-time KL-divergence tracking across heterogeneous model endpoints.',
-    tags: ['Monitoring', 'LLM'],
+  
+  {id:'origintrace',
+    type: 'Product',
+    title:' OriginTrace: Recursive Supply Chain Intelligence',
+    description:'OriginTrace is a supply chain mapping and risk assessment engine. It leverages a hybrid approach of web scraping, Bill of Materials (BOM) logic, and Generative AI to recursively "X-Ray" supply chains down to the raw material tiers, while providing real-time multi-factor risk intelligence.',
+    tags: ['Hackathon','React'],
+    image: 'https://raw.githubusercontent.com/Vidit-01/api-drift-agent/refs/heads/main/assets/first.gif',
+    repository: true
   },
   {
-    id: 'postmortem',
-    type: 'Marginalia & Failed States',
-    title: 'Postmortem',
+    id: 'attention-geometry',
+    type: 'Transformers',
+    title: 'Attention-Geometry-Dynamics',
     description:
-      "A curated collection of marginalia from failed experiments and what they taught about model convergence. Because the path to success is paved with gradients that didn't flow.",
-    links: ['Read Entry #12', 'Read Entry #45'],
-    failed: true,
+      'A measurement study tracking the internal geometry of a small transformer language model throughout training. Rather than focusing on final performance, this project instruments a standard GPT-style architecture with 18 geometric metrics, covering representation isotropy, weight matrix structure, attention entropy, and Q/K asymmetry, and records how they evolve across 80 epochs.',
+    tags: ['Attention', 'LLM'],
+    repository: true
   },
-  {
-    id: 'query-key-lab',
-    type: 'Mechanistic Study',
-    title: 'Query-Key-Lab',
-    description:
-      'A notebook-driven lab for probing query expansion and key specialization during transformer training runs.',
-    tags: ['Attention', 'Geometry'],
-  },
-  {
-    id: 'manifold-notes',
-    type: 'Archive Tooling',
-    title: 'Manifold Notes',
-    description:
-      'A small research notebook system that links experiment logs, diagrams, and paper references into one manuscript-like workspace.',
-    tags: ['Research UX', 'Notes'],
-  },
-  {
-    id: 'checkpoint-atlas',
-    type: 'Model Observatory',
-    title: 'Checkpoint Atlas',
-    description:
-      'Visual compares of model checkpoints over time, built to make subtle training dynamics visible before metrics flatten them.',
-    tags: ['Visualization', 'ML'],
-  },
+]
+
+const contactRows = [
+  { label: 'Name', value: 'Gupta, Vidit' },
+  { label: 'Institution', value: 'DJSCE Mumbai' },
+  { label: 'Email', value: 'viditanupgupta@gmail.com', href: 'mailto:viditanupgupta@gmail.com' },
+  { label: 'Codeforces', value: 'noobgrammer256', href: 'https://codeforces.com/profile/noobgrammer256' },
+  { label: 'Google Scholar', value: 'Vidit Gupta', href: 'https://scholar.google.com/' },
+  { label: 'GitHub', value: 'Vidit-01', href: 'https://github.com/Vidit-01' },
 ]
 
 function Sidebar({ activeId = 'abstract' }) {
@@ -114,6 +99,39 @@ function Sidebar({ activeId = 'abstract' }) {
        
         <a className="pdf-button" href="/#publications">Request Full PDF</a>
         
+      </div>
+    </aside>
+  )
+}
+
+function AuthorMetadata({ collapsed, onOpen, onClose }) {
+  return (
+    <aside className={`author-metadata ${collapsed ? 'is-collapsed' : ''}`} aria-label="Author metadata">
+      <button className="contact-pill" type="button" onClick={onOpen}>
+        <span className="material-symbols-outlined" aria-hidden="true">alternate_email</span>
+        <span>Contact</span>
+      </button>
+      <div className="metadata-card">
+        <button className="metadata-close" type="button" onClick={onClose} aria-label="Collapse contact menu">
+          <span className="material-symbols-outlined" aria-hidden="true">close</span>
+        </button>
+        <h2>Author Metadata</h2>
+        <dl>
+          {contactRows.map(({ label, value, href }) => (
+            <div key={label}>
+              <dt>{label}:</dt>
+              <dd>
+                {href ? (
+                  <a href={href} target={href.startsWith('mailto:') ? undefined : '_blank'} rel={href.startsWith('mailto:') ? undefined : 'noreferrer'}>
+                    {value}
+                  </a>
+                ) : (
+                  value
+                )}
+              </dd>
+            </div>
+          ))}
+        </dl>
       </div>
     </aside>
   )
@@ -239,9 +257,11 @@ function ProjectsArchive({ expanded = false }) {
 
   return (
     <div className={`projects-archive ${expanded ? 'expanded' : ''}`}>
-      <div className="reference-section-title">
-        <SectionHeader number="5" title="Projects"  />
-      </div>
+      <SectionHeader
+        number="5"
+        title="Projects"
+        eyebrow={expanded ? 'Expanded research archive' : 'Featured research artifacts'}
+      />
 
       <div className="projects-layout">
         <FeaturedProjectCard project={featured} />
@@ -285,7 +305,7 @@ function EducationSection() {
             Dwarkadas J. Sanghvi College of Engineering
           </a>
           <p>
-            Currently pursuing a <mark>B.Tech in Computer Science</mark> at Dwarkadas J. Sanghvi College of Engineering,
+            Currently pursuing a <mark>B.Tech in Information Technology</mark> at Dwarkadas J. Sanghvi College of Engineering,
             Mumbai (2024-2028)
           </p>
         </div>
@@ -296,9 +316,7 @@ function EducationSection() {
             Jawahar Navodaya Vidyalaya, Palghar
           </a>
       <p>
-            The academic journey began with a rigorous focus on the core sciences. My time at JNV Palghar provided a
-            robust foundation in <mark>Mathematics and Physics</mark>, fostering the analytical mindset essential for
-            advanced computational research.
+            Jawahar Navodaya Vidyalaya is a selective government residential school, admitting students through a national entrance exam. I studied here from Grade 6 through Grade 12 (2017-2024), living on campus away from home. It is also where I first got introduced to <mark>coding</mark>.
        </p>
         </div>
 
@@ -343,6 +361,9 @@ function PublicationCard({ publication }) {
 function App() {
   const isProjectsPage = window.location.pathname === '/projects'
   const [activeId, setActiveId] = useState(isProjectsPage ? 'project' : 'abstract')
+  const [isContactCollapsed, setIsContactCollapsed] = useState(false)
+  const [isContactPinnedOpen, setIsContactPinnedOpen] = useState(false)
+  const isMetadataOpen = !isContactCollapsed || isContactPinnedOpen
 
   useEffect(() => {
     const images = [...document.querySelectorAll('.taped-image')]
@@ -403,10 +424,34 @@ function App() {
     }
   }, [isProjectsPage])
 
+  useEffect(() => {
+    const updateContactState = () => {
+      const shouldCollapse = window.scrollY > 140 || window.innerWidth < 1180
+      setIsContactCollapsed(shouldCollapse)
+      if (!shouldCollapse) {
+        setIsContactPinnedOpen(false)
+      }
+    }
+
+    updateContactState()
+    window.addEventListener('scroll', updateContactState, { passive: true })
+    window.addEventListener('resize', updateContactState)
+
+    return () => {
+      window.removeEventListener('scroll', updateContactState)
+      window.removeEventListener('resize', updateContactState)
+    }
+  }, [])
+
   return (
     <>
       <Sidebar activeId={activeId} />
-      <main className="manuscript-shell">
+      <AuthorMetadata
+        collapsed={!isMetadataOpen}
+        onOpen={() => setIsContactPinnedOpen(true)}
+        onClose={() => setIsContactPinnedOpen(false)}
+      />
+      <main className={`manuscript-shell ${isMetadataOpen ? 'metadata-open' : 'metadata-collapsed'}`}>
         {isProjectsPage ? (
           <article className="manuscript project-manuscript">
             <section className="title-area page-section projects-title" id="project">
@@ -424,7 +469,6 @@ function App() {
         ) : (
         <article className="manuscript">
           <section className="title-area page-section" id="title">
-            <aside className="marginalia">*Note: Portfolio compiled as a research manuscript and archive index.</aside>
             <p className="red-script">Portfolio / Machine Learning / Research Systems</p>
             <h2>
               Vidit Gupta <br />
@@ -436,9 +480,7 @@ function App() {
             <SectionHeader number="1" title="Abstract" eyebrow="Manuscript summary" />
             <div className="abstract-card">
               <p>
-                This portfolio archives my work across machine learning, data science, systems thinking, and human-centered
-                research. It frames education, experience, projects, publications, and personal influences as connected
-                evidence for a single research practice: building rigorous tools that remain legible to people.
+                I'm a second-year CS undergrad at DJSCE Mumbai, and I'm obsessed with understanding the internal geometry of models. I have been exploring the initialization effects of Transformers on Wq and Wk matrix. I love build things from scratch to understand them. I'm actively looking to do research, bring whatever I have, and learn the rest.
               </p>
             </div>
           </section>
@@ -447,14 +489,10 @@ function App() {
             <SectionHeader number="2" title="Introduction" eyebrow="Research position" />
             <div className="two-column-text">
               <p>
-                My work begins with a practical question: how do intelligent systems become understandable enough to trust,
-                critique, and improve? I am interested in the structure beneath model behavior, from attention geometry to
-                reproducible research tooling.
+                I love to understand how things work. For me the mechanism below the surface is as important as the outcome. When I started to learn coding when I was thirteen, it caught my interest as I could understand how some of the technology works.   
               </p>
               <p>
-                The archive format reflects how I think: empirical notes, sharp metadata, clear provenance, and room for
-                interpretation. Each section below is a compact record of the training, work, projects, and intellectual
-                influences that shape that practice.
+                I would like to bring the joy of understanding to AI Research, which in turn might help us in the goal of making a efficient superintelligent system which works with people to solve greatest problems in Physics, Mathematics and formal Sciences.
               </p>
             </div>
           </section>
@@ -466,12 +504,11 @@ function App() {
             <div className="publication-stack">
               <TimelineItem
                 role="Machine Learning Intern"
-                company="IIT Rourkee"
+                company="IIT Roorkee"
                 start="May 2026"
                 end="Present"
               >
-                Designed experimental pipelines, evaluated model behavior, and translated research questions into
-                reproducible notebooks, demos, and technical documentation.
+                Contributing to a research project on drought prediction in India using climatic and environmental datasets. Working on exploratory analysis, feature engineering, and evaluating machine learning approaches for forecasting drought conditions. Gaining experience with geospatial and time-series data while supporting model development and experimentation.
               </TimelineItem>
               
             </div>
@@ -517,7 +554,6 @@ function App() {
         )}
 
         <footer className="page-footer">
-          <span>v2.1.0-beta | Commit: 8f2a1c | 2024-10-24</span>
           <div>
             <a href="/#title">Top</a>
             <a href="/#publications">Citations</a>
