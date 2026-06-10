@@ -8,7 +8,8 @@ const navItems = [
   ['04', 'Work Exp', 'psychology', 'work-exp'],
   ['05', 'Projects', 'code_blocks', 'project'],
   ['06', 'Publications', 'format_list_bulleted', 'publications'],
-  ['07', 'Hobbies', 'favorite', 'hobbies'],
+  ['07', 'Achievements', 'workspace_premium', 'achievements'],
+  ['08', 'Hobbies', 'favorite', 'hobbies'],
 ]
 
 const publications = [
@@ -22,6 +23,18 @@ const publications = [
       'This paper shows that query and key projections evolve asymmetrically during training — queries expand while keys specialize — causally controlling attention sharpness. Initialization acts as a persistent geometric prior shaping these dynamics even when validation losses converge.',
     
   },
+]
+
+const achievements = [
+  {
+    id: 'reigonal-science-congress',
+    // tone: 're',
+    eyebrow: '',
+    title: 'Presented at Regional Student Science Congress at IIT Gandhinagar',
+    description:
+      'Developed and presented a facial landmark–based mouse controller that enabled hands-free computer interaction using only a webcam. Built with OpenCV and MediaPipe, the system tracked facial features in real time and converted head movements into cursor actions. The project explored practical applications of computer vision for accessibility, assistive technology, and alternative human-computer interfaces. Presented the work at the Regional Student Science Congress hosted at IIT Gandhinagar',
+  },
+
 ]
 
 const projects = [
@@ -97,7 +110,7 @@ function Sidebar({ activeId = 'abstract' }) {
 
       <div className="sidebar-footer">
        
-        <a className="pdf-button" href="/#publications">Request Full PDF</a>
+        <a className="pdf-button" href="/Vidit_Resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
         
       </div>
     </aside>
@@ -378,6 +391,16 @@ function PublicationCard({ publication }) {
   )
 }
 
+function AchievementCard({ achievement }) {
+  return (
+    <article className={`achievement-card ${achievement.tone === 'red' ? 'accent' : ''}`}>
+      <p>{achievement.eyebrow}</p>
+      <h3>{achievement.title}</h3>
+      <span>{achievement.description}</span>
+    </article>
+  )
+}
+
 function App() {
   const isProjectsPage = window.location.pathname === '/projects'
   const [activeId, setActiveId] = useState(isProjectsPage ? 'project' : 'abstract')
@@ -421,7 +444,7 @@ function App() {
         }
       })
 
-      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) {
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - window.innerHeight * 0.18) {
         currentId = sections.at(-1)?.id ?? currentId
       }
 
@@ -547,8 +570,17 @@ function App() {
             </div>
           </section>
 
+          <section className="page-section" id="achievements">
+            <SectionHeader number="7" title="Achievements" eyebrow="Selected recognitions" />
+            <div className="achievement-stack">
+              {achievements.map((achievement) => (
+                <AchievementCard achievement={achievement} key={achievement.id} />
+              ))}
+            </div>
+          </section>
+
           <section className="page-section" id="hobbies">
-            <SectionHeader number="7" title="Hobbies" eyebrow="Human factor" />
+            <SectionHeader number="8" title="Hobbies" eyebrow="Human factor" />
 
             {/* Two-column: left = quote + text, right = Steins;Gate image */}
             <div className="hobby-header">

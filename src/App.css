@@ -43,6 +43,11 @@
   --sidebar-tint: rgba(106, 79, 128, 0.1);
 }
 
+.sidebar[data-active-section='achievements'] {
+  --sidebar-accent: #9a3c32;
+  --sidebar-tint: rgba(154, 60, 50, 0.1);
+}
+
 .sidebar[data-active-section='hobbies'] {
   --sidebar-accent: #37627d;
   --sidebar-tint: rgba(55, 98, 125, 0.1);
@@ -534,6 +539,67 @@ body {
   border: 1px solid var(--line);
   background: var(--white);
   padding: 34px 30px 28px;
+}
+
+.achievement-stack {
+  display: grid;
+  gap: 24px;
+  border: 1px solid var(--line);
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(28, 27, 27, 0.035) 0,
+      rgba(28, 27, 27, 0.035) 1px,
+      transparent 1px,
+      transparent 7px
+    ),
+    rgba(255, 255, 255, 0.58);
+  padding: 30px 34px;
+}
+
+.achievement-card {
+  border-left: 5px solid color-mix(in srgb, var(--ink-soft), transparent 18%);
+  padding: 0 0 0 24px;
+}
+
+.achievement-card.accent {
+  border-left-color: var(--red);
+}
+
+.achievement-card p {
+  margin: 0 0 8px;
+  color: var(--ink-soft);
+  font-family: var(--mono);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+.achievement-card.accent p {
+  color: color-mix(in srgb, var(--red), #fff 18%);
+}
+
+.achievement-card h3 {
+  margin: 0;
+  max-width: 860px;
+  color: var(--ink);
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 34px);
+  font-style: italic;
+  font-weight: 750;
+  letter-spacing: 0;
+  line-height: 1.14;
+}
+
+.achievement-card span {
+  display: block;
+  margin-top: 10px;
+  color: var(--ink-soft);
+  font-family: var(--serif);
+  font-size: 15px;
+  line-height: 1.35;
 }
 
 .publication-card.muted {
@@ -1490,6 +1556,28 @@ mark {
 
   .timeline-item {
     padding: 76px 20px 22px;
+  }
+
+  .achievement-stack {
+    gap: 22px;
+    padding: 26px 20px;
+  }
+
+  .achievement-card {
+    border-left-width: 5px;
+    padding-left: 18px;
+  }
+
+  .achievement-card p {
+    font-size: 11px;
+  }
+
+  .achievement-card h3 {
+    font-size: 24px;
+  }
+
+  .achievement-card span {
+    font-size: 14px;
   }
 
   .publication-card h3,
