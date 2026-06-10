@@ -792,9 +792,14 @@ blockquote {
 
 .projects-layout {
   display: grid;
-  grid-template-columns: minmax(0, 2.1fr) minmax(240px, 1fr);
+  grid-template-columns: minmax(0, 1.4fr) minmax(300px, 1fr);
   gap: 24px;
   align-items: start;
+}
+
+.projects-column {
+  display: grid;
+  gap: 24px;
 }
 
 .featured-project-card,
@@ -829,10 +834,13 @@ blockquote {
   line-height: 1.08;
 }
 
-.featured-project-card h3,
+.featured-project-card h3 {
+  font-size: 24px;
+}
+
 .compact-project-card h3,
 .compact-project-card.failed h3 {
-  font-size: 29px;
+  font-size: 34px;
 }
 
 .featured-project-card p:not(.citation) {
@@ -870,7 +878,29 @@ blockquote {
 .compact-project-card {
   display: flex;
   flex-direction: column;
-  padding: 24px 26px;
+  padding: 32px 32px;
+}
+
+.compact-project-card.has-image {
+  overflow: hidden;
+}
+
+.compact-project-image {
+  margin: -24px -26px 18px;
+  border-bottom: 1px solid var(--line);
+  background: var(--paper-dim);
+}
+
+.compact-project-image img {
+  display: block;
+  width: 100%;
+  height: 188px;
+  filter: grayscale(1) contrast(1.12);
+  object-fit: cover;
+}
+
+.compact-project-card.has-image:hover .compact-project-image img {
+  filter: grayscale(0) contrast(1);
 }
 
 .compact-project-card > p {
@@ -1017,10 +1047,6 @@ blockquote {
   color: #000;
 }
 
-.projects-archive.expanded .projects-layout {
-  grid-auto-flow: dense;
-}
-
 .projects-archive.expanded .compact-project-card:not(.repository-card):not(.failed) {
   min-height: 0;
 }
@@ -1152,21 +1178,32 @@ mark {
   padding: 0 4px;
 }
 
-.hobby-grid {
+/* Two-column header: quote+text on the left, Steins;Gate image on the right */
+.hobby-header {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 280px;
-  gap: 24px;
+  grid-template-columns: minmax(0, 1fr) 180px;
+  gap: 32px;
   align-items: start;
 }
 
-.hobby-grid blockquote {
-  margin: 0;
+.hobby-header-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.hobby-header-left .closing-note {
+  margin-bottom: 0;
+}
+
+.hobby-quote {
+  margin: 0 0 16px;
   background: rgba(255, 255, 255, 0.75);
   font-size: 16px;
   line-height: 1.55;
 }
 
-.hobby-grid blockquote span {
+.hobby-quote span {
   display: block;
   margin-top: 12px;
   color: var(--red);
@@ -1174,6 +1211,38 @@ mark {
   font-size: 11px;
   font-style: normal;
   text-align: right;
+}
+
+/* Steins;Gate feature image on the right */
+.hobby-feature-img {
+  box-shadow: 0 12px 24px rgba(28, 27, 27, 0.10);
+}
+
+.hobby-feature-img img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  max-height: 220px;
+  filter: grayscale(0) contrast(1) !important;
+}
+
+/* Four-image strip below */
+.hobby-image-strip {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-top: 8px;
+  align-items: start;
+}
+
+.hobby-strip-img {
+  box-shadow: 0 8px 18px rgba(28, 27, 27, 0.09);
+}
+
+.hobby-strip-img img {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  aspect-ratio: unset;
 }
 
 .curation-box {
@@ -1333,6 +1402,22 @@ mark {
     grid-template-columns: 1fr;
   }
 
+  .hobby-header {
+    grid-template-columns: 1fr;
+  }
+
+  .hobby-feature-img {
+    max-width: 180px;
+  }
+
+  .hobby-image-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .projects-column {
+    gap: 20px;
+  }
+
   .project-manuscript {
     width: min(100% - 40px, 760px);
   }
@@ -1417,6 +1502,14 @@ mark {
   .featured-project-card,
   .compact-project-card {
     padding: 20px 18px;
+  }
+
+  .compact-project-image {
+    margin: -20px -18px 16px;
+  }
+
+  .compact-project-image img {
+    height: 176px;
   }
 
   .featured-project-meta {

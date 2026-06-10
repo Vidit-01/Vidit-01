@@ -49,9 +49,9 @@ const projects = [
   {id:'origintrace',
     type: 'Product',
     title:' OriginTrace: Recursive Supply Chain Intelligence',
-    description:'OriginTrace is a supply chain mapping and risk assessment engine. It leverages a hybrid approach of web scraping, Bill of Materials (BOM) logic, and Generative AI to recursively "X-Ray" supply chains down to the raw material tiers, while providing real-time multi-factor risk intelligence.',
+    description:'OriginTrace is an AI-powered supply chain mapping and risk intelligence platform that recursively traces supply networks to raw materials using BOM logic, web data, and generative AI.',
     tags: ['Hackathon','React'],
-    image: 'https://raw.githubusercontent.com/Vidit-01/api-drift-agent/refs/heads/main/assets/first.gif',
+    image: 'https://raw.githubusercontent.com/Vidit-01/OriginTrace/refs/heads/main/Screenshot%202026-06-10%20205312.png',
     repository: true
   },
   {
@@ -169,6 +169,14 @@ function CompactProjectCard({ project, className = '' }) {
         {project.failed ? <span className="failure-dot" aria-hidden="true" /> : null}
       </div>
       <h3>{project.title}</h3>
+      
+      {/* Renders image below title if present */}
+      {project.image && !project.failed && (
+        <figure className="taped-image project-image" style={{ margin: '14px 0' }}>
+          <img src={project.image} alt={project.title} />
+        </figure>
+      )}
+
       {project.quote ? <blockquote>{project.quote}</blockquote> : null}
       <p>{project.description}</p>
       {project.tags ? <Tags items={project.tags} /> : null}
@@ -251,9 +259,10 @@ function FeaturedProjectCard({ project }) {
 function ProjectsArchive({ expanded = false }) {
   const visibleProjects = expanded ? projects : projects.slice(0, 4)
   const [featured, repository, apiDrift, postmortem, ...secondary] = visibleProjects
-  const orderedProjects = expanded
-    ? [repository, postmortem, apiDrift, ...secondary]
-    : [repository, postmortem, apiDrift]
+  const leftColumnProjects = [postmortem]
+  const rightColumnProjects = expanded
+    ? [repository, apiDrift, ...secondary]
+    : [repository, apiDrift]
 
   return (
     <div className={`projects-archive ${expanded ? 'expanded' : ''}`}>
@@ -264,14 +273,25 @@ function ProjectsArchive({ expanded = false }) {
       />
 
       <div className="projects-layout">
-        <FeaturedProjectCard project={featured} />
-        {orderedProjects.filter(Boolean).map((project) => (
-          <CompactProjectCard
-            project={project}
-            className={project.repository ? 'repository-card' : ''}
-            key={project.id}
-          />
-        ))}
+        <div className="projects-column projects-column-main">
+          <FeaturedProjectCard project={featured} />
+          {leftColumnProjects.filter(Boolean).map((project) => (
+            <CompactProjectCard
+              project={project}
+              className={`${project.repository ? 'repository-card' : ''} project-${project.id}`}
+              key={project.id}
+            />
+          ))}
+        </div>
+        <div className="projects-column projects-column-side">
+          {rightColumnProjects.filter(Boolean).map((project) => (
+            <CompactProjectCard
+              project={project}
+              className={`${project.repository ? 'repository-card' : ''} project-${project.id}`}
+              key={project.id}
+            />
+          ))}
+        </div>
       </div>
 
       {!expanded ? (
@@ -296,7 +316,7 @@ function EducationSection() {
             src="https://www.collegebatch.com/static/clg-gallery/dwarkadas-j-sanghvi-college-of-engineering-mumbai-213187.webp"
             alt=""
           />
-          <figcaption>Fig 4.1: DJSCE - Undergrad Studies</figcaption>
+          <figcaption>Fig 3.1: DJSCE - Undergrad Studies</figcaption>
         </figure>
 
         <div className="edu-copy">
@@ -325,7 +345,7 @@ function EducationSection() {
             src="https://i.ytimg.com/vi/Z8OP6dPXtSY/sddefault.jpg"
             alt=""
           />
-          <figcaption>Fig 4.2: JNV Palghar - Early Foundations</figcaption>
+          <figcaption>Fig 3.2: JNV Palghar - Early Foundations</figcaption>
         </figure>
       </div>
     </section>
@@ -529,27 +549,30 @@ function App() {
 
           <section className="page-section" id="hobbies">
             <SectionHeader number="7" title="Hobbies" eyebrow="Human factor" />
-            <div className="hobby-grid">
-              <blockquote>
-                "The universe has a beginning, but no end. Infinite. Stars, too, have a beginning, but their own power
-                results in their destruction. Finite."
-                <span>- Fragment from Steins;Gate</span>
-              </blockquote>
-              <div className="curation-box">
-                <h3>Current Curations</h3>
-                <ul>
-                  <li>Stoic Philosophy</li>
-                  <li>Temporal Dynamics</li>
-                  <li>Visual Semiotics</li>
-                  <li>Abstract Minimalism</li>
-                </ul>
+
+            {/* Two-column: left = quote + text, right = Steins;Gate image */}
+            <div className="hobby-header">
+              <div className="hobby-header-left">
+                <blockquote className="hobby-quote">
+                  "If you want to grant your own wish, then you should clear your own path to it."
+                  <span>- Makise Kurisu from Steins;Gate</span>
+                </blockquote>
+                <p className="closing-note">
+                  Apart from coding, I spend my free time watching anime and YouTube. My favourite shows include Steins;Gate, Love is War and Attack on Titan. My favourite YouTuber is Vsauce. I also love debates and discussions around philosophy. I like space travel. I grew watching and playing Pokemon. I still play Minecraft sometimes. My favourite computer scientist is Claude Shanon
+                </p>
               </div>
+
+              <figure className="taped-image hobby-feature-img" style={{ transform: 'rotate(-1.8deg)' }}>
+                <img
+                  src="https://m.media-amazon.com/images/M/MV5BZjI1YjZiMDUtZTI3MC00YTA5LWIzMmMtZmQ0NTZiYWM4NTYwXkEyXkFqcGc@._V1_QL75_UX380_CR0,4,380,562_.jpg"
+                  alt="Steins;Gate anime"
+                />
+                <figcaption>Fig 7.1 / Steins;Gate &mdash; Anime</figcaption>
+              </figure>
             </div>
-            <p className="closing-note">
-              Hobbies are parallel tracks of inquiry: narrative systems, philosophy, visual culture, and the small rituals
-              that keep technical work humane.
-            </p>
+
           </section>
+
         </article>
         )}
 
