@@ -1,0 +1,199 @@
+- generic [ref=e2]:
+  - complementary "Archive navigation" [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - heading "ARCHIVE.01" [level=1] [ref=e6]
+        - paragraph [ref=e7]: Vol. 2024 / Portfolio
+      - navigation [ref=e8]:
+        - link "01 Title" [ref=e9] [cursor=pointer]:
+          - /url: /#title
+          - generic [ref=e10]: badge
+          - generic [ref=e11]: 01 Title
+        - link "02 Abstract" [ref=e12] [cursor=pointer]:
+          - /url: /#abstract
+          - generic [ref=e13]: article
+          - generic [ref=e14]: 02 Abstract
+        - link "03 Introduction" [ref=e15] [cursor=pointer]:
+          - /url: /#introduction
+          - generic [ref=e16]: subject
+          - generic [ref=e17]: 03 Introduction
+        - link "04 Education" [ref=e18] [cursor=pointer]:
+          - /url: /#education
+          - generic [ref=e19]: school
+          - generic [ref=e20]: 04 Education
+        - link "05 Work Exp" [ref=e21] [cursor=pointer]:
+          - /url: /#work-exp
+          - generic [ref=e22]: psychology
+          - generic [ref=e23]: 05 Work Exp
+        - link "06 Projects" [ref=e24] [cursor=pointer]:
+          - /url: /#project
+          - generic [ref=e25]: code_blocks
+          - generic [ref=e26]: 06 Projects
+        - link "07 Publications" [ref=e27] [cursor=pointer]:
+          - /url: /#publications
+          - generic [ref=e28]: format_list_bulleted
+          - generic [ref=e29]: 07 Publications
+        - link "08 Hobbies" [ref=e30] [cursor=pointer]:
+          - /url: /#hobbies
+          - generic [ref=e31]: favorite
+          - generic [ref=e32]: 08 Hobbies
+    - link "Request Full PDF" [ref=e34] [cursor=pointer]:
+      - /url: "#publications"
+  - main [ref=e35]:
+    - generic [ref=e36]:
+      - generic [ref=e37]:
+        - paragraph [ref=e38]: "Vidit Gupta | Manuscript Draft #004"
+        - generic [ref=e39]:
+          - generic [ref=e40]: DJSCE Mumbai
+          - generic [ref=e41]: arXiv:2401.0823
+          - generic [ref=e42]: ML Researcher
+      - generic [ref=e43]: "ORCID: 0000-0002-1825-0097"
+    - article [ref=e44]:
+      - generic [ref=e45]:
+        - paragraph [ref=e46]: Portfolio / Machine Learning / Research Systems
+        - heading "Vidit Gupta Research Portfolio." [level=2] [ref=e47]:
+          - text: Vidit Gupta
+          - emphasis [ref=e48]: Research Portfolio.
+      - generic [ref=e49]:
+        - generic [ref=e50]:
+          - generic [ref=e52]: Section [1]
+          - paragraph [ref=e53]: Manuscript summary
+          - heading "Abstract" [level=2] [ref=e54]
+        - paragraph [ref=e56]: "This portfolio archives my work across machine learning, data science, systems thinking, and human-centered research. It frames education, experience, projects, publications, and personal influences as connected evidence for a single research practice: building rigorous tools that remain legible to people."
+      - generic [ref=e57]:
+        - generic [ref=e58]:
+          - generic [ref=e60]: Section [2]
+          - paragraph [ref=e61]: Research position
+          - heading "Introduction" [level=2] [ref=e62]
+        - generic [ref=e63]:
+          - paragraph [ref=e64]: "My work begins with a practical question: how do intelligent systems become understandable enough to trust, critique, and improve? I am interested in the structure beneath model behavior, from attention geometry to reproducible research tooling."
+          - paragraph [ref=e65]: "The archive format reflects how I think: empirical notes, sharp metadata, clear provenance, and room for interpretation. Each section below is a compact record of the training, work, projects, and intellectual influences that shape that practice."
+      - generic [ref=e66]:
+        - generic [ref=e67]:
+          - generic [ref=e69]: Section [3]
+          - paragraph
+          - heading "Academic Background" [level=2] [ref=e70]
+        - generic [ref=e71]:
+          - 'figure "Fig 4.1: DJSCE - Undergrad Studies" [ref=e72]':
+            - generic [ref=e73]: "Fig 4.1: DJSCE - Undergrad Studies"
+          - generic [ref=e74]:
+            - link "Institutional Link Dwarkadas J. Sanghvi College of Engineering" [ref=e75] [cursor=pointer]:
+              - /url: "#education"
+              - generic [ref=e76]: Institutional Link
+              - text: Dwarkadas J. Sanghvi College of Engineering
+            - paragraph [ref=e77]:
+              - text: Currently pursuing a
+              - mark [ref=e78]: B.Tech in Computer Science
+              - text: at Dwarkadas J. Sanghvi College of Engineering, Mumbai (2024-2028)
+          - generic [ref=e79]:
+            - link "Institutional Link Jawahar Navodaya Vidyalaya, Palghar" [ref=e80] [cursor=pointer]:
+              - /url: "#education"
+              - generic [ref=e81]: Institutional Link
+              - text: Jawahar Navodaya Vidyalaya, Palghar
+            - paragraph [ref=e82]:
+              - text: The academic journey began with a rigorous focus on the core sciences. My time at JNV Palghar provided a robust foundation in
+              - mark [ref=e83]: Mathematics and Physics
+              - text: ", fostering the analytical mindset essential for advanced computational research."
+          - 'figure "Fig 4.2: JNV Palghar - Early Foundations" [ref=e84]':
+            - generic [ref=e85]: "Fig 4.2: JNV Palghar - Early Foundations"
+      - generic [ref=e86]:
+        - generic [ref=e87]:
+          - generic [ref=e89]: Section [4]
+          - paragraph [ref=e90]: Applied practice
+          - heading "Work Experience" [level=2] [ref=e91]
+        - article [ref=e93]:
+          - generic [ref=e94]: May 2026 - Present
+          - paragraph [ref=e95]: IIT Rourkee
+          - heading "Machine Learning Intern" [level=3] [ref=e96]
+          - paragraph [ref=e97]: Designed experimental pipelines, evaluated model behavior, and translated research questions into reproducible notebooks, demos, and technical documentation.
+      - generic [ref=e99]:
+        - generic [ref=e100]:
+          - generic [ref=e101]: "[05]"
+          - paragraph [ref=e102]: Featured Research Projects
+        - generic [ref=e103]:
+          - article [ref=e104]:
+            - generic [ref=e105]:
+              - generic [ref=e106]:
+                - paragraph [ref=e107]: Interactive Visualization
+                - generic [ref=e108]:
+                  - generic [ref=e109]: WebGL
+                  - generic [ref=e110]: PyTorch
+              - heading "Attention-Geometry-Dynamics" [level=3] [ref=e111]
+              - paragraph [ref=e112]: An interactive playground for visualizing how different attention heads interact within a geometric space. This project investigates the spatial emergent properties of multi-head structures in large language models.
+            - figure "Fig 5.1 / Attention Manifold Reconstruction" [ref=e113]:
+              - generic [ref=e114]: Fig 5.1 / Attention Manifold Reconstruction
+              - generic [ref=e115]: open_in_new
+          - article [ref=e116]:
+            - paragraph [ref=e118]: System
+            - heading "Systems-from-Scratch" [level=3] [ref=e119]
+            - blockquote [ref=e120]: Optimizing at the metal is the only way to truly understand the spirit of the machine.
+            - paragraph [ref=e121]: A pedagogical archive documenting the construction of a custom neural inference engine from the ground up.
+            - generic [ref=e122]:
+              - generic [ref=e123]: System
+              - generic [ref=e124]: C++
+            - link "View Repository" [ref=e125] [cursor=pointer]:
+              - /url: "#project"
+              - generic [ref=e126]: View Repository
+              - generic [ref=e127]: arrow_forward
+          - article [ref=e128]:
+            - paragraph [ref=e130]: Project_Log.log
+            - heading "API-Drift-Agent" [level=3] [ref=e131]
+            - paragraph [ref=e132]: A research tool for monitoring and mitigating distribution shift in production LLM APIs. Implements real-time KL-divergence tracking across heterogeneous model endpoints.
+            - generic [ref=e133]:
+              - generic [ref=e134]: Monitoring
+              - generic [ref=e135]: LLM
+          - article [ref=e136]:
+            - paragraph [ref=e138]: Marginalia & Failed States
+            - heading "Postmortem" [level=3] [ref=e140]
+            - paragraph [ref=e141]: A curated collection of marginalia from failed experiments and what they taught about model convergence. Because the path to success is paved with gradients that didn't flow.
+            - generic [ref=e142]:
+              - 'link "Read Entry #12" [ref=e143] [cursor=pointer]':
+                - /url: "#project"
+              - 'link "Read Entry #45" [ref=e144] [cursor=pointer]':
+                - /url: "#project"
+            - figure "Loss spike placeholder" [ref=e145]:
+              - generic [ref=e147]: error
+              - generic [ref=e148]: "Loss Spike #009"
+        - link "Show More" [ref=e149] [cursor=pointer]:
+          - /url: /projects
+          - generic [ref=e150]: Show More
+          - generic [ref=e151]: arrow_forward
+      - generic [ref=e152]:
+        - generic [ref=e153]:
+          - generic [ref=e155]: Section [6]
+          - paragraph [ref=e156]: Reference list
+          - heading "Publications" [level=2] [ref=e157]
+        - article [ref=e159]:
+          - generic [ref=e160]: Arxiv
+          - paragraph [ref=e161]: Gupta, V. (2026)
+          - heading "Query Expansion and Key Specialization in Transformer Attention Geometry" [level=3] [ref=e162]
+          - paragraph [ref=e163]: This paper shows that query and key projections evolve asymmetrically during training — queries expand while keys specialize — causally controlling attention sharpness. Initialization acts as a persistent geometric prior shaping these dynamics even when validation losses converge.
+      - generic [ref=e164]:
+        - generic [ref=e165]:
+          - generic [ref=e167]: Section [7]
+          - paragraph [ref=e168]: Human factor
+          - heading "Hobbies" [level=2] [ref=e169]
+        - generic [ref=e170]:
+          - blockquote [ref=e171]:
+            - text: "\"The universe has a beginning, but no end. Infinite. Stars, too, have a beginning, but their own power results in their destruction. Finite.\""
+            - generic [ref=e172]: "- Fragment from Steins;Gate"
+          - generic [ref=e173]:
+            - heading "Current Curations" [level=3] [ref=e174]
+            - list [ref=e175]:
+              - listitem [ref=e176]: Stoic Philosophy
+              - listitem [ref=e177]: Temporal Dynamics
+              - listitem [ref=e178]: Visual Semiotics
+              - listitem [ref=e179]: Abstract Minimalism
+        - paragraph [ref=e180]: "Hobbies are parallel tracks of inquiry: narrative systems, philosophy, visual culture, and the small rituals that keep technical work humane."
+    - generic [ref=e181]:
+      - generic [ref=e182]: "v2.1.0-beta | Commit: 8f2a1c | 2024-10-24"
+      - generic [ref=e183]:
+        - link "Top" [ref=e184] [cursor=pointer]:
+          - /url: "#title"
+        - link "Citations" [ref=e185] [cursor=pointer]:
+          - /url: "#publications"
+        - link "Archive Index" [ref=e186] [cursor=pointer]:
+          - /url: "#hobbies"
+  - link "Back to top" [ref=e187] [cursor=pointer]:
+    - /url: "#title"
+    - generic [ref=e188]: vertical_align_top

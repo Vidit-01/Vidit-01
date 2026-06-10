@@ -1,0 +1,79 @@
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;700&family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,300,0,0&display=swap');
+
+:root {
+  --background: #fdf8f8;
+  --paper: #f7f3f2;
+  --paper-muted: #f1edec;
+  --paper-dim: #ddd9d8;
+  --ink: #1c1b1b;
+  --ink-soft: #444748;
+  --line: #c4c7c7;
+  --line-soft: #e5e2e1;
+  --red: #b02d21;
+  --white: #ffffff;
+  --shadow-ink: #1c1b1b;
+  --sidebar-width: 320px;
+  --serif: 'EB Garamond', Georgia, serif;
+  --sans: Inter, system-ui, sans-serif;
+  --mono: 'JetBrains Mono', Consolas, monospace;
+
+  color: var(--ink);
+  background: var(--background);
+  font-family: var(--sans);
+  font-size: 16px;
+  font-synthesis: none;
+  line-height: 1.6;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  background:
+    url('https://www.transparenttextures.com/patterns/felt.png'),
+    var(--background);
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background:
+    url('https://www.transparenttextures.com/patterns/felt.png'),
+    var(--background);
+}
+
+a {
+  color: inherit;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+.material-symbols-outlined {
+  display: inline-block;
+  font-family: 'Material Symbols Outlined';
+  font-size: 1.2em;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  text-transform: none;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  font-feature-settings: 'liga';
+  -webkit-font-feature-settings: 'liga';
+  -webkit-font-smoothing: antialiased;
+}

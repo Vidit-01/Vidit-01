@@ -1,0 +1,211 @@
+- generic [ref=e2]:
+  - complementary "Archive navigation" [ref=e3]:
+    - generic [ref=e4]:
+      - generic [ref=e5]:
+        - heading "ARCHIVE.01" [level=1] [ref=e6]
+        - paragraph [ref=e7]: Vol. 2024 / Portfolio
+      - navigation [ref=e8]:
+        - link "01 Title" [ref=e9] [cursor=pointer]:
+          - /url: "#title"
+          - generic [ref=e10]: badge
+          - generic [ref=e11]: 01 Title
+        - link "02 Abstract" [ref=e12] [cursor=pointer]:
+          - /url: "#abstract"
+          - generic [ref=e13]: article
+          - generic [ref=e14]: 02 Abstract
+        - link "03 Introduction" [ref=e15] [cursor=pointer]:
+          - /url: "#introduction"
+          - generic [ref=e16]: subject
+          - generic [ref=e17]: 03 Introduction
+        - link "04 Education" [ref=e18] [cursor=pointer]:
+          - /url: "#education"
+          - generic [ref=e19]: school
+          - generic [ref=e20]: 04 Education
+        - link "05 Work Exp" [ref=e21] [cursor=pointer]:
+          - /url: "#work-exp"
+          - generic [ref=e22]: psychology
+          - generic [ref=e23]: 05 Work Exp
+        - link "06 Project" [ref=e24] [cursor=pointer]:
+          - /url: "#project"
+          - generic [ref=e25]: code_blocks
+          - generic [ref=e26]: 06 Project
+        - link "07 Publications" [ref=e27] [cursor=pointer]:
+          - /url: "#publications"
+          - generic [ref=e28]: format_list_bulleted
+          - generic [ref=e29]: 07 Publications
+        - link "08 Hobbies" [ref=e30] [cursor=pointer]:
+          - /url: "#hobbies"
+          - generic [ref=e31]: favorite
+          - generic [ref=e32]: 08 Hobbies
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - img "Portrait of Vidit Gupta" [ref=e35]
+        - generic [ref=e36]:
+          - strong [ref=e37]: Vidit Gupta
+          - generic [ref=e38]: ML Researcher
+      - link "Request Full PDF" [ref=e39] [cursor=pointer]:
+        - /url: "#publications"
+      - generic [ref=e40]:
+        - link "Citations" [ref=e41] [cursor=pointer]:
+          - /url: "#publications"
+          - generic [ref=e42]: format_quote
+          - text: Citations
+        - link "Top" [ref=e43] [cursor=pointer]:
+          - /url: "#title"
+          - generic [ref=e44]: vertical_align_top
+          - text: Top
+  - main [ref=e45]:
+    - generic [ref=e46]:
+      - generic [ref=e47]:
+        - paragraph [ref=e48]: "Vidit Gupta | Manuscript Draft #004"
+        - generic [ref=e49]:
+          - generic [ref=e50]: DJSCE Mumbai
+          - generic [ref=e51]: arXiv:2401.0823
+          - generic [ref=e52]: ML Researcher
+      - generic [ref=e53]: "ORCID: 0000-0002-1825-0097"
+    - article [ref=e54]:
+      - generic [ref=e55]:
+        - paragraph [ref=e56]: Portfolio / Machine Learning / Research Systems
+        - heading "Vidit Gupta Research Portfolio." [level=2] [ref=e57]:
+          - text: Vidit Gupta
+          - emphasis [ref=e58]: Research Portfolio.
+        - generic [ref=e188]: Section [01]
+      - generic [ref=e61]:
+        - generic [ref=e62]:
+          - generic [ref=e64]: Section [02]
+          - paragraph [ref=e65]: Manuscript summary
+          - heading "Abstract" [level=2] [ref=e66]
+        - paragraph [ref=e68]: "This portfolio archives my work across machine learning, data science, systems thinking, and human-centered research. It frames education, experience, projects, publications, and personal influences as connected evidence for a single research practice: building rigorous tools that remain legible to people."
+      - generic [ref=e69]:
+        - generic [ref=e70]:
+          - generic [ref=e72]: Section [03]
+          - paragraph [ref=e73]: Research position
+          - heading "Introduction" [level=2] [ref=e74]
+        - generic [ref=e75]:
+          - paragraph [ref=e76]: "My work begins with a practical question: how do intelligent systems become understandable enough to trust, critique, and improve? I am interested in the structure beneath model behavior, from attention geometry to reproducible research tooling."
+          - paragraph [ref=e77]: "The archive format reflects how I think: empirical notes, sharp metadata, clear provenance, and room for interpretation. Each section below is a compact record of the training, work, projects, and intellectual influences that shape that practice."
+      - generic [ref=e189]:
+        - generic [ref=e190]:
+          - paragraph [ref=e191]: Section [04] / Foundations
+          - heading "Academic Background." [level=2] [ref=e192]:
+            - text: Academic
+            - text: Background.
+          - generic [ref=e193]: "04"
+        - generic [ref=e194]:
+          - 'figure "Fig 4.1: DJSCE - College Desk" [ref=e195]':
+            - generic [ref=e196]: "Fig 4.1: DJSCE - College Desk"
+          - generic [ref=e197]:
+            - link "Institutional Link Dwarkadas J. Sanghvi College of Engineering" [ref=e198] [cursor=pointer]:
+              - /url: "#education"
+              - generic [ref=e199]: Institutional Link
+              - text: Dwarkadas J. Sanghvi College of Engineering
+            - paragraph [ref=e200]:
+              - text: Currently pursuing a
+              - mark [ref=e201]: B.Tech in Computer Science
+              - text: at Dwarkadas J. Sanghvi College of Engineering, Mumbai (2024-2028), the journey is characterized by a deep dive into the fundamental layers of computational logic.
+          - generic [ref=e202]:
+            - link "Institutional Link Jawahar Navodaya Vidyalaya, Palghar" [ref=e203] [cursor=pointer]:
+              - /url: "#education"
+              - generic [ref=e204]: Institutional Link
+              - text: Jawahar Navodaya Vidyalaya, Palghar
+            - paragraph [ref=e205]: Secondary & Higher Secondary Education
+            - paragraph [ref=e206]:
+              - text: The academic journey began with a rigorous focus on the core sciences. My time at JNV Palghar provided a robust foundation in
+              - mark [ref=e207]: Mathematics and Physics
+              - text: ", fostering the analytical mindset essential for advanced computational research."
+          - 'figure "Fig 4.2: JNV Palghar - Early Foundations" [ref=e208]':
+            - generic [ref=e209]: "Fig 4.2: JNV Palghar - Early Foundations"
+      - generic [ref=e95]:
+        - generic [ref=e96]:
+          - generic [ref=e98]: Section [05]
+          - paragraph [ref=e99]: Applied practice
+          - heading "Work Experience" [level=2] [ref=e100]
+        - generic [ref=e101]:
+          - article [ref=e102]:
+            - generic [ref=e103]: "2024"
+            - paragraph [ref=e104]: ML Researcher
+            - heading "Machine Learning Research & Prototyping" [level=3] [ref=e105]
+            - paragraph [ref=e106]: Designed experimental pipelines, evaluated model behavior, and translated research questions into reproducible notebooks, demos, and technical documentation.
+          - article [ref=e107]:
+            - generic [ref=e108]: 2023 - 2024
+            - paragraph [ref=e109]: Open-source / academic projects
+            - heading "Data Systems Contributor" [level=3] [ref=e110]
+            - paragraph [ref=e111]: Built analysis utilities, cleaned datasets, and documented implementation decisions across collaborative codebases where clarity and reproducibility mattered.
+      - generic [ref=e112]:
+        - generic [ref=e113]:
+          - generic [ref=e115]: Section [06]
+          - paragraph [ref=e116]: Featured research artifact
+          - heading "Project" [level=2] [ref=e117]
+        - article [ref=e118]:
+          - 'figure "Fig 6.1: Attention-Geometry-Dynamics" [ref=e119]':
+            - generic [ref=e120]: "Fig 6.1: Attention-Geometry-Dynamics"
+          - generic [ref=e121]:
+            - paragraph [ref=e122]: Featured build / Research tooling
+            - heading "Attention-Geometry-Dynamics" [level=3] [ref=e123]
+            - paragraph [ref=e124]: An interactive playground for visualizing how different attention heads interact within a geometric space. Includes real-time manifold projection, experiment notes, and reproducible model checkpoints.
+            - generic [ref=e125]:
+              - generic [ref=e126]: WebGL
+              - generic [ref=e127]: PyTorch
+              - generic [ref=e128]: Systems
+      - generic [ref=e129]:
+        - generic [ref=e130]:
+          - generic [ref=e132]: Section [07]
+          - paragraph [ref=e133]: Reference list
+          - heading "Publications" [level=2] [ref=e134]
+        - generic [ref=e135]:
+          - article [ref=e136]:
+            - generic [ref=e137]: "Venue: J. Neural Comp. & Geometry"
+            - paragraph [ref=e138]: Gupta, V. (2024)
+            - 'heading "Topological Structures in Multi-Head Attention: A Manifold Perspective" [level=3] [ref=e139]'
+            - paragraph [ref=e140]: This research interrogates the latent geometric properties of attention maps in large-scale transformer models. By applying Persistent Homology to cross-attention matrices, we reveal high-dimensional manifold structures that correlate with semantic coherence.
+            - generic [ref=e141]:
+              - generic [ref=e142]:
+                - text: Methodology
+                - paragraph [ref=e143]: Persistent Homology, TDA
+              - generic [ref=e144]:
+                - text: Key Findings
+                - paragraph [ref=e145]: Attention heads form toroidal clusters during inference.
+            - generic [ref=e146]:
+              - generic [ref=e147]: Peer reviewed
+              - generic [ref=e148]: Open access
+              - generic [ref=e149]: "#Topology"
+              - generic [ref=e150]: "#Attention"
+              - generic [ref=e151]: "#Geometry"
+          - article [ref=e152]:
+            - generic [ref=e153]: "Tenure: 2022 - 2023"
+            - paragraph [ref=e154]: Chen, A. & Gupta, V. (2022)
+            - heading "Systems Integrity in Decentralized Research Nodes" [level=3] [ref=e155]
+            - paragraph [ref=e156]: A comprehensive study on maintaining state consistency across decentralized neural computation nodes without central orchestration. Documents the structural protocol for cross-repository resource sharing.
+            - blockquote [ref=e157]: "*Editor's Note: This work established the groundwork for dynamic routing protocols."
+            - generic [ref=e158]:
+              - generic [ref=e159]: "Archive Index #442"
+              - generic [ref=e160]: Intl. Conf. Distributed Systems
+      - generic [ref=e161]:
+        - generic [ref=e162]:
+          - generic [ref=e164]: Section [08]
+          - paragraph [ref=e165]: Human factor
+          - heading "Hobbies" [level=2] [ref=e166]
+        - generic [ref=e167]:
+          - blockquote [ref=e168]:
+            - text: "\"The universe has a beginning, but no end. Infinite. Stars, too, have a beginning, but their own power results in their destruction. Finite.\""
+            - generic [ref=e169]: "- Fragment from Steins;Gate"
+          - generic [ref=e170]:
+            - heading "Current Curations" [level=3] [ref=e171]
+            - list [ref=e172]:
+              - listitem [ref=e173]: Stoic Philosophy
+              - listitem [ref=e174]: Temporal Dynamics
+              - listitem [ref=e175]: Visual Semiotics
+              - listitem [ref=e176]: Abstract Minimalism
+        - paragraph [ref=e177]: "Hobbies are parallel tracks of inquiry: narrative systems, philosophy, visual culture, and the small rituals that keep technical work humane."
+    - generic [ref=e178]:
+      - generic [ref=e179]: "v2.1.0-beta | Commit: 8f2a1c | 2024-10-24"
+      - generic [ref=e180]:
+        - link "Top" [ref=e181] [cursor=pointer]:
+          - /url: "#title"
+        - link "Citations" [ref=e182] [cursor=pointer]:
+          - /url: "#publications"
+        - link "Archive Index" [ref=e183] [cursor=pointer]:
+          - /url: "#hobbies"
+  - link "Back to top" [ref=e184] [cursor=pointer]:
+    - /url: "#title"
+    - generic [ref=e185]: vertical_align_top

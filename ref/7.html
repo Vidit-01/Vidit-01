@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ARCHIVE.01 | Human Factor &amp; Hobbies</title>
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&amp;family=Inter:wght@300;400;500;600&amp;family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-tint": "#5f5e5e",
+                    "inverse-on-surface": "#f4f0ef",
+                    "on-primary-fixed": "#1c1b1b",
+                    "on-background": "#1c1b1b",
+                    "surface": "#fdf8f8",
+                    "secondary-fixed-dim": "#ffb4a9",
+                    "on-surface-variant": "#444748",
+                    "surface-variant": "#e5e2e1",
+                    "surface-container-lowest": "#ffffff",
+                    "error": "#ba1a1a",
+                    "surface-dim": "#ddd9d8",
+                    "surface-container": "#f1edec",
+                    "tertiary-fixed-dim": "#cac6c4",
+                    "primary-fixed-dim": "#c8c6c5",
+                    "on-primary-container": "#858383",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed": "#e6e2df",
+                    "outline-variant": "#c4c7c7",
+                    "on-secondary-container": "#650001",
+                    "background": "#fdf8f8",
+                    "tertiary": "#000000",
+                    "primary-container": "#1c1b1b",
+                    "on-primary-fixed-variant": "#474746",
+                    "inverse-surface": "#313030",
+                    "on-secondary-fixed": "#410000",
+                    "on-primary": "#ffffff",
+                    "on-secondary-fixed-variant": "#8e130c",
+                    "primary": "#000000",
+                    "secondary-fixed": "#ffdad5",
+                    "on-tertiary-fixed-variant": "#484645",
+                    "surface-container-high": "#ebe7e6",
+                    "secondary": "#b02d21",
+                    "secondary-container": "#fc6451",
+                    "on-secondary": "#ffffff",
+                    "on-tertiary-fixed": "#1c1b1a",
+                    "outline": "#747878",
+                    "on-error": "#ffffff",
+                    "on-tertiary-container": "#868382",
+                    "surface-container-highest": "#e5e2e1",
+                    "error-container": "#ffdad6",
+                    "surface-bright": "#fdf8f8",
+                    "surface-container-low": "#f7f3f2",
+                    "on-error-container": "#93000a",
+                    "tertiary-container": "#1c1b1a",
+                    "primary-fixed": "#e5e2e1",
+                    "on-surface": "#1c1b1b",
+                    "inverse-primary": "#c8c6c5"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sidebar-width": "320px",
+                    "margin-desktop": "64px",
+                    "column-width": "1fr",
+                    "margin-mobile": "24px",
+                    "gutter": "32px"
+            },
+            "fontFamily": {
+                    "body-lg": ["Inter"],
+                    "headline-lg": ["EB Garamond"],
+                    "body-md": ["Inter"],
+                    "label-mono": ["JetBrains Mono"],
+                    "headline-md": ["EB Garamond"],
+                    "display": ["EB Garamond"],
+                    "caption-serif": ["EB Garamond"]
+            },
+            "fontSize": {
+                    "body-lg": ["1.125rem", {"lineHeight": "1.7", "fontWeight": "400"}],
+                    "headline-lg": ["3rem", {"lineHeight": "1.2", "fontWeight": "600"}],
+                    "body-md": ["1rem", {"lineHeight": "1.6", "fontWeight": "400"}],
+                    "label-mono": ["0.75rem", {"lineHeight": "1.5", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                    "headline-md": ["2rem", {"lineHeight": "1.3", "fontWeight": "600"}],
+                    "display": ["4.5rem", {"lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                    "caption-serif": ["0.875rem", {"lineHeight": "1.4"}]
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-image: url('https://www.transparenttextures.com/patterns/felt.png');
+            background-color: #fdf8f8;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .manuscript-area {
+            max-width: 800px;
+        }
+
+        .marginalia {
+            position: absolute;
+            right: -240px;
+            width: 200px;
+            font-style: italic;
+            opacity: 0.7;
+        }
+
+        .block-shadow {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+
+        .paper-stack::before {
+            content: '';
+            position: absolute;
+            top: 4px;
+            left: 4px;
+            right: -4px;
+            bottom: -4px;
+            background: white;
+            border: 1px solid #c4c7c7;
+            z-index: -1;
+        }
+
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        .taped-image {
+            position: relative;
+        }
+        .taped-image::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%) rotate(-2deg);
+            width: 80px;
+            height: 25px;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(2px);
+            z-index: 10;
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface selection:bg-secondary-container selection:text-on-secondary-container">
+<!-- Sidebar Navigation Shell -->
+<nav class="fixed left-0 top-0 h-full w-sidebar-width border-r border-outline-variant bg-surface-container-low flex flex-col justify-between p-8 z-50">
+<div>
+<div class="font-headline-lg text-headline-lg font-bold text-primary border-b border-outline-variant pb-4 mb-8">
+                ARCHIVE.01
+                <div class="text-[0.5em] font-label-mono tracking-widest text-on-surface-variant uppercase mt-1">Vol. 2024 / Portfolio</div>
+</div>
+<div class="space-y-6 flex flex-col">
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">article</span>
+                    01 Abstract
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">list_alt</span>
+                    02 Table of Contents
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">psychology</span>
+                    03 Current Research
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">format_list_bulleted</span>
+                    04 Reference List
+                </a>
+<a class="flex items-center gap-3 text-on-surface-variant hover:text-primary transition-colors duration-200 font-body-md text-body-md uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">rate_review</span>
+                    05 Peer Review
+                </a>
+<!-- Setting active for "07 Hobbies" as per request -->
+<a class="flex items-center gap-3 text-primary font-bold border-l-4 border-secondary pl-2 bg-surface-variant/30 font-body-md text-body-md uppercase tracking-wider" href="#">
+<span class="material-symbols-outlined">favorite</span>
+                    07 Hobbies
+                </a>
+</div>
+</div>
+<div class="space-y-8">
+<div class="flex items-center gap-4">
+<img alt="Portrait of Vidit Gupta" class="w-12 h-12 rounded-none grayscale border border-outline shadow-sm" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDhkmOXFATpBOUigZjTixD_ET0ub_xxglhehIflFJYghf4Zx1RnGd2HAKFUmV5S9DvCAOoEdh1gnrPsL77Dfg4CQeaAnu8YBtw6jhHfVmBFO3lPKA5nvry-wGd7FvH98aD_P_Hf7p2Muz2nFC-Bj4ttztcpF0cHHaxNKyhjuLF3wDuXBpqIDQdvvl2WsfdybUG7oa5BNcCh4OobnRWaXAoXpdcHOf1MIl91AuP5_0KYQ8hbZX93BP6qmovfcWqYmAmWFFmaQ55BuUeO"/>
+<div>
+<div class="font-label-mono text-label-mono font-bold">Vidit Gupta</div>
+<div class="font-label-mono text-[10px] text-on-surface-variant">ML Researcher</div>
+</div>
+</div>
+<button class="w-full py-4 bg-primary text-on-primary font-label-mono text-label-mono font-bold tracking-widest hover:bg-on-primary-fixed-variant transition-all active:opacity-80">
+                REQUEST FULL PDF
+            </button>
+<div class="flex flex-col gap-4 border-t border-outline-variant pt-6">
+<a class="flex items-center gap-2 font-label-mono text-label-mono text-on-surface-variant hover:text-secondary" href="#">
+<span class="material-symbols-outlined text-sm">format_quote</span> Citations
+                </a>
+<a class="flex items-center gap-2 font-label-mono text-label-mono text-on-surface-variant hover:text-secondary" href="#">
+<span class="material-symbols-outlined text-sm">settings</span> Settings
+                </a>
+</div>
+</div>
+</nav>
+<!-- Main Content Area -->
+<main class="ml-sidebar-width min-h-screen relative overflow-x-hidden pb-24">
+<!-- Top App Bar -->
+<header class="flex justify-between items-start pt-8 px-12 manuscript-area mx-auto w-full">
+<div class="font-label-mono text-label-mono text-secondary italic">
+                Vidit Gupta | Manuscript Draft #004
+            </div>
+<div class="flex gap-8 font-label-mono text-label-mono text-on-surface-variant">
+<a class="hover:text-primary" href="#">DJSCE Mumbai</a>
+<a class="hover:text-primary" href="#">arXiv:2401.0823</a>
+<a class="hover:text-primary" href="#">ML Researcher</a>
+</div>
+<div class="font-label-mono text-label-mono text-secondary">
+                ORCID: 0000-0002-1825-0097
+            </div>
+</header>
+<section class="manuscript-area mx-auto px-4 mt-20 relative">
+<!-- Metadata Box -->
+<div class="absolute -right-24 top-0 hidden lg:block">
+<div class="bg-surface-container border border-primary p-6 w-72 block-shadow">
+<div class="font-label-mono text-[10px] border-b border-outline-variant pb-2 mb-4 uppercase tracking-widest">Research Identity</div>
+<div class="space-y-3">
+<div class="flex justify-between font-label-mono text-[10px]">
+<span class="text-on-surface-variant">NAME:</span>
+<span class="font-bold">Gupta, Vidit</span>
+</div>
+<div class="flex justify-between font-label-mono text-[10px] items-start">
+<span class="text-on-surface-variant">DEPT:</span>
+<span class="text-right">Artificial Intelligence &amp; Data Science</span>
+</div>
+<div class="flex justify-between font-label-mono text-[10px]">
+<span class="text-on-surface-variant">STATUS:</span>
+<span class="text-secondary italic">Curious-Active</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Page Title -->
+<div class="mb-16">
+<div class="font-label-mono text-secondary text-label-mono mb-4 flex items-center gap-2">
+<span class="w-8 h-[1px] bg-secondary"></span> 
+                    Human Factor &amp; Hobbies / 2024
+                </div>
+<h1 class="font-display text-display leading-tight">
+                    Beyond the Binary: <br/>
+<span class="italic font-normal">The Human Factor &amp; <br/> Intellectual Curiosities.</span>
+</h1>
+</div>
+<!-- Main Text Content -->
+<div class="grid grid-cols-1 md:grid-cols-12 gap-gutter">
+<div class="md:col-span-12">
+<p class="font-body-lg text-body-lg mb-12 first-letter:text-7xl first-letter:font-headline-lg first-letter:float-left first-letter:mr-3 first-letter:mt-2">
+                        Computational rigor often obscures the irrational, beautiful mess that is human curiosity. While my primary research focuses on Machine Learning and Data Science, the true catalyst for my work lies in the "Human Factor"—the qualitative bridge between digital logic and subjective experience. This section serves as an archive of the non-linear influences that shape my professional output.
+                    </p>
+</div>
+</div>
+<!-- Section 07 - Human Factor -->
+<div class="mb-24 relative">
+<div class="flex items-center gap-4 mb-8">
+<div class="bg-primary text-on-primary font-label-mono text-label-mono px-3 py-1">[07.1]</div>
+<h2 class="font-headline-md text-headline-md">The Human Factor</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+<div class="space-y-6">
+<p class="font-body-md text-body-md">
+                            Interaction is not just about throughput or efficiency; it is about the semiotics of the interface. In my exploration of human-digital interaction, I examine how we map cognitive models onto rigid silicon structures. 
+                        </p>
+<p class="font-body-md text-body-md">
+                            It is the study of why we feel a certain way when a transition is smooth, or how a specific visualization can trigger a moment of 'Aha!' that raw data never could. My interest lies in quantifying these qualitative shifts using modern ML techniques.
+                        </p>
+</div>
+<div class="taped-image bg-white p-4 border border-outline-variant shadow-sm rotate-1">
+<img alt="Conceptual Mapping of Human-Digital Interaction" class="w-full grayscale contrast-125 mb-3" src="https://lh3.googleusercontent.com/aida/AP1WRLug9FLIFdDnHPWSOvhY9sZdVJ7H10RoFEuGQZbIFFZ9Vh1_DZtwqDNA-YD7CCIx0ILC8yrouk9-snwecJb1hJPH8bzTUpwYE9AnKwSHAR5fOOw5owPKTocvlVec-bU0YVffqA8zdVY3zAjO8I0f1sFZsPQ3-cEZsmB4FvuRFSgaCduDdeg-Ydv2EOqi33PWIYGGwqVJm8jaRRtX8NGOTeIN3976BLEaakR-NZnkkefQip1CODwTY0bqrKPz"/>
+<div class="font-caption-serif text-caption-serif italic text-on-surface-variant text-center">
+                            Fig 7.1: Conceptual Mapping of Human-Digital Interaction. A study of gesture and geometry.
+                        </div>
+</div>
+</div>
+</div>
+<!-- Section 07.2 - Hobbies & Philosophy -->
+<div class="mb-24">
+<div class="flex items-center gap-4 mb-8">
+<div class="bg-primary text-on-primary font-label-mono text-label-mono px-3 py-1">[07.2]</div>
+<h2 class="font-headline-md text-headline-md">Intellectual Scaffolding</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+<div class="md:col-span-8">
+<div class="bg-surface-container-low p-8 border-l-2 border-primary italic font-body-lg text-on-surface/90 relative">
+                            "The universe has a beginning, but no end. — Infinite. Stars, too, have a beginning, but their own power results in their destruction. — Finite."
+                            <div class="mt-4 font-label-mono text-xs text-secondary not-italic text-right">— Fragment from Steins;Gate</div>
+</div>
+<p class="font-body-md text-body-md mt-8">
+                            My hobbies are not distractions but rather parallel tracks of inquiry. I find deep resonance in the narrative structures of complex media like <span class="bg-surface-variant px-1 font-medium">Steins;Gate</span>, which explores the causality and deterministic nature of reality—concepts that frequently mirror my fascinations with neural network weight initialization and path optimization.
+                        </p>
+</div>
+<div class="md:col-span-4 space-y-4">
+<div class="border border-outline-variant p-4">
+<h4 class="font-label-mono text-[10px] uppercase font-bold text-secondary mb-3 tracking-widest">Current Curations</h4>
+<ul class="font-label-mono text-xs space-y-2">
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> Stoic Philosophy</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> Temporal Dynamics</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> Visual Semiotics</li>
+<li class="flex items-center gap-2"><span class="w-1.5 h-1.5 bg-primary"></span> Abstract Minimalism</li>
+</ul>
+</div>
+<div class="marginalia text-xs font-label-mono text-secondary">
+                            *Editor's Note: These interests form the "latent space" from which my research emerges.
+                        </div>
+</div>
+</div>
+</div>
+<!-- Acknowledgements -->
+<div class="mt-32 pt-16 border-t border-outline-variant">
+<div class="flex items-center gap-4 mb-8">
+<div class="bg-primary text-on-primary font-label-mono text-label-mono px-3 py-1">[ACK]</div>
+<h2 class="font-headline-md text-headline-md">Acknowledgements</h2>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 font-caption-serif text-caption-serif leading-relaxed text-on-surface-variant">
+<div>
+<span class="font-bold block text-primary mb-2">Academic Mentors</span>
+                        Gracious thanks to the faculty at DJSCE for fostering an environment where interdisciplinary curiosity is not just tolerated, but encouraged. Their rigorous critiques of my early ML models laid the foundation for the precision I strive for today.
+                    </div>
+<div>
+<span class="font-bold block text-primary mb-2">The Archive Community</span>
+                        To the researchers on arXiv and the open-source community: your commitment to shared knowledge is the heartbeat of modern progress. Every "git pull" is a reminder of our collective effort to understand the world.
+                    </div>
+<div>
+<span class="font-bold block text-primary mb-2">Personal Inspiration</span>
+                        Deep gratitude to the creators of Steins;Gate and the stoic philosophers who taught me that the "Human Factor" is the most important variable in any equation. Your art remains my anchor in the sea of data.
+                    </div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer class="mt-24 border-t border-outline-variant bg-surface-dim py-12">
+<div class="manuscript-area mx-auto px-12 flex justify-between items-center font-label-mono text-label-mono text-on-surface-variant">
+<div>
+                    v2.1.0-beta | Commit: 8f2a1c | 2024-10-24
+                </div>
+<div class="flex gap-8">
+<a class="hover:text-secondary underline" href="#">Git Log</a>
+<a class="hover:text-secondary underline" href="#">Changelog</a>
+<a class="hover:text-secondary underline" href="#">Archive Index</a>
+</div>
+</div>
+</footer>
+</main>
+<!-- Floating Action Element -->
+<div class="fixed bottom-8 right-8 z-50">
+<div class="bg-surface border-2 border-primary p-2 block-shadow hover:translate-x-1 hover:translate-y-1 hover:shadow-none transition-all cursor-help group relative">
+<span class="material-symbols-outlined text-primary group-hover:text-secondary transition-colors" data-weight="fill">attachment</span>
+<div class="absolute bottom-full right-0 mb-4 w-48 bg-primary text-on-primary p-3 text-[10px] font-label-mono opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+                ATTACHED: RAW_NOTES_VOL7.TXT
+            </div>
+</div>
+</div>
+<script>
+        // Subtle micro-interaction: update the manuscript area on scroll
+        window.addEventListener('scroll', () => {
+            const progress = window.scrollY / (document.body.scrollHeight - window.innerHeight);
+            // Could add progress bar or dynamic marginalia effects here
+        });
+
+        // Taped images hover effect
+        document.querySelectorAll('.taped-image').forEach(img => {
+            img.addEventListener('mouseenter', () => {
+                img.style.transform = `rotate(${Math.random() * 4 - 2}deg) scale(1.02)`;
+                img.style.transition = 'all 0.3s ease';
+            });
+            img.addEventListener('mouseleave', () => {
+                img.style.transform = `rotate(1deg) scale(1)`;
+            });
+        });
+    </script>
+</body></html>
