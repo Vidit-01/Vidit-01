@@ -1412,39 +1412,30 @@ mark {
 
 @media (max-width: 900px) {
   .sidebar {
-    position: static;
-    width: 100%;
-    gap: 20px;
-    padding: 22px 20px;
-  }
-
-  .brand-block h1 {
-    font-size: 42px;
-  }
-
-  .brand-block p {
-    margin-bottom: 20px;
-  }
-
-  .archive-nav {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .sidebar-footer {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: none;
   }
 
   .manuscript-shell {
     margin-left: 0;
-    padding-right: 0;
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .manuscript-shell.metadata-open,
+  .manuscript-shell.metadata-collapsed {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .author-metadata,
+  .floating-attachment,
+  .page-footer {
+    display: none;
   }
 
   .topbar,
   .manuscript {
-    width: min(100% - 40px, 760px);
+    width: 100%;
     margin-right: auto;
     margin-left: auto;
   }
@@ -1485,7 +1476,7 @@ mark {
   }
 
   .project-manuscript {
-    width: min(100% - 40px, 760px);
+    width: 100%;
   }
 
   .featured-project-card {
@@ -1542,25 +1533,61 @@ mark {
 }
 
 @media (max-width: 560px) {
-  .archive-nav {
-    grid-template-columns: 1fr;
+  .manuscript,
+  .project-manuscript {
+    width: 100%;
+  }
+
+  .page-section + .page-section {
+    margin-top: 30px;
+  }
+
+  .title-area {
+    margin-bottom: 22px;
+    padding-top: 12px;
+  }
+
+  .red-script {
+    margin-bottom: 6px;
+    font-size: 11px;
+    line-height: 1.45;
   }
 
   .title-area h2 {
-    font-size: 48px;
+    font-size: 46px;
+  }
+
+  .title-area h2 em {
+    font-size: 34px;
+  }
+
+  .section-header {
+    margin-bottom: 14px;
+  }
+
+  .section-header .section-rule {
+    margin-bottom: 10px;
+  }
+
+  .section-header > p {
+    margin-bottom: 6px;
+  }
+
+  .section-header h2 {
+    font-size: 42px;
   }
 
   .publication-card {
-    padding: 76px 20px 22px;
+    padding: 62px 16px 18px;
   }
 
   .timeline-item {
-    padding: 76px 20px 22px;
+    padding: 62px 16px 18px;
   }
 
   .achievement-stack {
-    gap: 22px;
-    padding: 26px 20px;
+    gap: 18px;
+    padding: 20px 16px;
   }
 
   .achievement-card {
@@ -1589,11 +1616,11 @@ mark {
 
   .featured-project-card,
   .compact-project-card {
-    padding: 20px 18px;
+    padding: 18px 14px;
   }
 
   .compact-project-image {
-    margin: -20px -18px 16px;
+    margin: -18px -14px 14px;
   }
 
   .compact-project-image img {
@@ -1610,8 +1637,13 @@ mark {
   }
 
   .abstract-card {
-    padding: 20px;
+    padding: 16px 18px;
     font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .two-column-text {
+    gap: 18px;
   }
 
   .education-title h2 {
@@ -1640,26 +1672,4 @@ mark {
     text-align: left;
   }
 
-  .page-footer div {
-    flex-wrap: wrap;
-    gap: 16px;
-  }
-
-  .floating-attachment {
-    right: 20px;
-    bottom: 20px;
-  }
-
-  .author-metadata {
-    right: 20px;
-    bottom: 84px;
-  }
-
-  .contact-pill span:last-child {
-    display: none;
-  }
-
-  .contact-pill {
-    padding: 10px;
-  }
 }
