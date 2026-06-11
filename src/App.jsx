@@ -402,11 +402,13 @@ function AchievementCard({ achievement }) {
 }
 
 function App() {
-  const isProjectsPage = window.location.pathname === '/projects'
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
+  const isProjectsPage = pathname === '/projects'
   const [activeId, setActiveId] = useState(isProjectsPage ? 'project' : 'abstract')
-  const [isContactCollapsed, setIsContactCollapsed] = useState(false)
+  const [isContactAutoCollapsed, setIsContactAutoCollapsed] = useState(false)
+  const [isContactManuallyClosed, setIsContactManuallyClosed] = useState(false)
   const [isContactPinnedOpen, setIsContactPinnedOpen] = useState(false)
-  const isMetadataOpen = !isContactCollapsed || isContactPinnedOpen
+  const isMetadataOpen = (!isContactAutoCollapsed && !isContactManuallyClosed) || isContactPinnedOpen
 
   useEffect(() => {
     const images = [...document.querySelectorAll('.taped-image')]
@@ -470,7 +472,7 @@ function App() {
   useEffect(() => {
     const updateContactState = () => {
       const shouldCollapse = window.scrollY > 140 || window.innerWidth < 1180
-      setIsContactCollapsed(shouldCollapse)
+      setIsContactAutoCollapsed(shouldCollapse)
       if (!shouldCollapse) {
         setIsContactPinnedOpen(false)
       }
@@ -491,8 +493,14 @@ function App() {
       <Sidebar activeId={activeId} />
       <AuthorMetadata
         collapsed={!isMetadataOpen}
-        onOpen={() => setIsContactPinnedOpen(true)}
-        onClose={() => setIsContactPinnedOpen(false)}
+        onOpen={() => {
+          setIsContactManuallyClosed(false)
+          setIsContactPinnedOpen(true)
+        }}
+        onClose={() => {
+          setIsContactManuallyClosed(true)
+          setIsContactPinnedOpen(false)
+        }}
       />
       <main className={`manuscript-shell ${isMetadataOpen ? 'metadata-open' : 'metadata-collapsed'}`}>
         {isProjectsPage ? (
