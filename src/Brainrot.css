@@ -1,0 +1,275 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&family=Comic+Neue:wght@700&family=Press+Start+2P&display=swap');
+
+html.brainrot-lock,
+html.brainrot-lock body {
+  margin: 0;
+  overflow: hidden;
+  background: #f6f1e8;
+}
+
+.brainrot,
+.brainrot-stage {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  background:
+    repeating-linear-gradient(0deg, rgba(0, 0, 0, 0.03) 0 2px, transparent 2px 8px),
+    #f6f1e8;
+  color: #111;
+  font-family: 'Comic Neue', 'Comic Sans MS', cursive, sans-serif;
+}
+
+.brainrot-hero {
+  position: absolute;
+  top: 10px;
+  left: 16px;
+  z-index: 20;
+  width: min(70vw, 820px);
+  margin: 0;
+  font-family: Impact, Haettenschweiler, sans-serif;
+  font-size: clamp(28px, 4.4vw, 52px);
+  line-height: 0.95;
+  text-shadow: 3px 3px 0 #fff, -2px 0 #ff0055, 2px 0 #00e5ff;
+  pointer-events: none;
+}
+
+.brainrot-now {
+  position: absolute;
+  top: 72px;
+  left: 16px;
+  z-index: 20;
+  width: min(56vw, 560px);
+  margin: 0;
+  padding: 8px 10px;
+  background: #111;
+  color: #7cff6b;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+  line-height: 1.6;
+  pointer-events: none;
+}
+
+.brainrot-vid {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 6;
+  margin: 0;
+  overflow: hidden;
+  border: 5px solid #111;
+  background: #111;
+  box-shadow: 8px 8px 0 #111;
+  will-change: transform;
+}
+
+.brainrot-vid figcaption,
+.brainrot-sticker p {
+  margin: 0;
+  padding: 6px 10px;
+  background: #111;
+  color: #fff;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 9px;
+}
+
+.vid-frame {
+  position: relative;
+  overflow: hidden;
+  background: #000;
+}
+
+.vid-frame img,
+.vid-frame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  object-fit: cover;
+  pointer-events: none;
+}
+
+.brainrot-vid-lock {
+  position: absolute;
+  inset: 0;
+}
+
+.vid-subway {
+  width: min(28vw, 280px);
+}
+
+.vid-subway .vid-frame {
+  height: min(62vh, 520px);
+}
+
+.vid-guy,
+.vid-gangnam {
+  width: min(38vw, 460px);
+}
+
+.vid-guy .vid-frame,
+.vid-gangnam .vid-frame {
+  height: min(28vh, 260px);
+}
+
+.brainrot-duo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  pointer-events: none;
+  will-change: transform;
+}
+
+.sahur-yell {
+  margin: 0 0 6px;
+  font-family: Impact, Haettenschweiler, sans-serif;
+  font-size: clamp(26px, 4.2vw, 54px);
+  line-height: 0.9;
+  color: #ffe600;
+  text-shadow: 4px 4px 0 #111, -2px 0 #ff0055;
+}
+
+.duo-bodies {
+  display: flex;
+  align-items: flex-end;
+}
+
+.duo-chika {
+  height: min(38vh, 340px);
+  width: auto;
+  background: transparent;
+}
+
+.duo-sahur {
+  height: min(56vh, 540px);
+  width: auto;
+  margin-left: -20px;
+  background: transparent;
+}
+
+.brainrot-sticker {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 8;
+  width: min(26vw, 240px);
+  padding: 0 0 10px;
+  border: 2px solid #111;
+  background: #ffe56b;
+  box-shadow: 4px 4px 0 #111;
+  will-change: transform;
+}
+
+.brainrot-sticker:nth-of-type(odd) {
+  background: #7cff6b;
+}
+
+.brainrot-sticker span {
+  display: block;
+  padding: 8px 10px 0;
+  font-size: 14px;
+  line-height: 1.35;
+}
+
+.brainrot-mascot {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 9;
+  font-size: 56px;
+  filter: drop-shadow(3px 3px 0 #111);
+  pointer-events: none;
+  will-change: transform;
+}
+
+.brainrot-snake {
+  position: absolute;
+  inset: 0;
+  z-index: 12;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.brainrot-ticker {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 18;
+  overflow: hidden;
+  background: #ff0055;
+  color: #fff;
+  font-family: Bangers, Impact, sans-serif;
+  font-size: 28px;
+  white-space: nowrap;
+}
+
+.brainrot-ticker div {
+  display: inline-block;
+  padding: 8px 0;
+  animation: ticker 36s linear infinite;
+}
+
+.brainrot-bgm {
+  position: fixed;
+  left: -9999px;
+  top: 0;
+  width: 200px;
+  height: 120px;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.brainrot-hud {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  z-index: 22;
+  display: flex;
+  gap: 8px;
+}
+
+.brainrot-hud button,
+.brainrot-hud a {
+  border: 3px solid #111;
+  background: #fff;
+  color: #111;
+  padding: 8px 10px;
+  font-family: 'Press Start 2P', monospace;
+  font-size: 8px;
+  text-decoration: none;
+}
+
+.brainrot-hud button {
+  cursor: pointer;
+  background: #7cff6b;
+}
+
+@keyframes ticker {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (max-width: 800px) {
+  .vid-subway {
+    width: 160px;
+  }
+
+  .vid-guy,
+  .vid-gangnam {
+    width: 220px;
+  }
+
+  .duo-chika {
+    height: 150px;
+  }
+
+  .duo-sahur {
+    height: 230px;
+  }
+}

@@ -61,6 +61,11 @@ img {
   max-width: 100%;
 }
 
+.brainrot-boot {
+  min-height: 100vh;
+  background: #000;
+}
+
 .material-symbols-outlined {
   display: inline-block;
   font-family: 'Material Symbols Outlined';

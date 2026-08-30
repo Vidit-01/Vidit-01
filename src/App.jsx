@@ -1,5 +1,7 @@
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 import './App.css'
+
+const Brainrot = lazy(() => import('./Brainrot.jsx'))
 
 const navItems = [
   ['01', 'Abstract', 'article', 'abstract'],
@@ -16,65 +18,146 @@ const publications = [
   {
     id: 'attention-PR-geometry',
     tone: 'light',
-    citation: 'Gupta, V. (2026)',
+    citation: 'Gupta, V., Nadkarni, S., Chaudhari, M., Sawant, V., Satam, P. (2026)',
     title: 'Query Expansion and Key Specialization in Transformer Attention Geometry',
-    label:"Arxiv",
+    label: 'Under Review',
     description:
       'This paper shows that query and key projections evolve asymmetrically during training — queries expand while keys specialize — causally controlling attention sharpness. Initialization acts as a persistent geometric prior shaping these dynamics even when validation losses converge.',
-    
+  },
+  {
+    id: 'residual-stream-geometry',
+    tone: 'light',
+    citation: 'Gupta, V., Khandagle, P., Katre, N., Machado, S. (2026)',
+    title: 'Residual-Stream Geometry in Transformer Language Models',
+    label: 'Under Review',
+    description:
+      'A controlled width study of residual-stream geometry in GPT-style language models on WikiText-2. The hypothesis that effective rank decreases with depth does not hold: rank rises with depth and training, mid-layer capacity utilisation converges to ~79% across widths, and the narrowest model (d=128) generalises better than wider, over-provisioned ones.',
   },
 ]
 
 const achievements = [
   {
-    id: 'reigonal-science-congress',
-    // tone: 're',
-    eyebrow: '',
-    title: 'Presented at Regional Student Science Congress at IIT Gandhinagar',
+    id: 'best-student-teacher',
+    eyebrow: 'JNV Palghar, 2023',
+    title: 'Best Student Teacher Award',
     description:
-      'Developed and presented a facial landmark–based mouse controller that enabled hands-free computer interaction using only a webcam. Built with OpenCV and MediaPipe, the system tracked facial features in real time and converted head movements into cursor actions. The project explored practical applications of computer vision for accessibility, assistive technology, and alternative human-computer interfaces. Presented the work at the Regional Student Science Congress hosted at IIT Gandhinagar',
+      'Recognized by faculty for outstanding performance in the annual Teachers’ Day student-led teaching program at Jawahar Navodaya Vidyalaya, Palghar.',
   },
-
+  {
+    id: 'regional-science-congress',
+    eyebrow: 'IIT Gandhinagar, 2022',
+    title: 'Regional Student Science Congress',
+    description:
+      'Developed and presented a facial landmark–based mouse controller that enabled hands-free computer interaction using only a webcam. Built with OpenCV and MediaPipe, the system tracked facial features in real time and converted head movements into cursor actions. Presented at the Regional Student Science Congress hosted at IIT Gandhinagar.',
+  },
 ]
 
 const projects = [
   {
-    id: 'api-drift-agent',
-    type: 'Developer Tool',
-    title: 'API-Drift-Agent',
+    id: 'attention-geometry',
+    type: 'Mechanistic Interp',
+    title: 'Attention Geometry & Training Dynamics',
     description:
-      'A CLI tool that detects drift between an OpenAPI 3.x contract and a live FastAPI codebase. Built around two layers: a deterministic static analyzer that classifies exact contract differences and an agent explanation layer using LangChain that reasons about whether the spec or the code should be treated as source of truth.',
-    tags: ['Tools', 'Langchain'],
-    image: 'https://raw.githubusercontent.com/Vidit-01/api-drift-agent/refs/heads/main/assets/first.gif',
-    caption: 'Fig 5.1 / Attention Manifold Reconstruction',
+      'A measurement study of a ~4M-parameter GPT-style language model across 87 epochs. Instruments 18 geometric metrics — attention entropy, Q/K participation ratios, W_q spectral norms, and pre/post-softmax rank — on a WikiText-103 character subset. Finds that queries and keys diverge despite sharing c_attn, and that softmax concentrates a rising-rank logit matrix into a low-rank attention pattern.',
+    tags: ['PyTorch', 'Attention'],
+    image: 'https://raw.githubusercontent.com/Vidit-01/attention-geometry-dynamics/main/plots/participation_ratio.png',
+    caption: 'Fig 5.1 / Q and K participation-ratio divergence by depth',
+    url: 'https://github.com/Vidit-01/attention-geometry-dynamics',
     feature: true,
   },
   {
-    id: 'systems-from-scratch',
-    type: 'Systems',
-    title: 'Systems-from-Scratch',
+    id: 'language-model-stack',
+    type: 'LLM Systems',
+    title: 'Language Model Stack: Training to Agents',
     description:
-    'A personal project of building various systems which developers interact with from ground up. The aim of this project was to understand the systems which abstraction hides. Currently Data Structures, HTTP Server and Storage Engine were made.',
-    tags: ['System', 'C++'],
+      'End-to-end language-model pipeline from scratch: a modern decoder (custom BPE, RoPE, GQA, SwiGLU MoE), a token-level inference runtime with KV cache and greedy / beam / nucleus / min-p / typical sampling, and a tool-using agent that interrupts decoding, executes tools, and resumes without rebuilding the prompt.',
+    tags: ['PyTorch', 'Agents'],
+    url: 'https://github.com/Vidit-01/language-model-stack',
     repository: true,
   },
-  
-  {id:'origintrace',
-    type: 'Product',
-    title:' OriginTrace: Recursive Supply Chain Intelligence',
-    description:'OriginTrace is an AI-powered supply chain mapping and risk intelligence platform that recursively traces supply networks to raw materials using BOM logic, web data, and generative AI.',
-    tags: ['Hackathon','React'],
-    image: 'https://raw.githubusercontent.com/Vidit-01/OriginTrace/refs/heads/main/Screenshot%202026-06-10%20205312.png',
-    repository: true
+  {
+    id: 'representation-geometry',
+    type: 'Research Tooling',
+    title: 'Representation Geometry',
+    description:
+      'A published, model-agnostic PyTorch library for measuring transformer representation geometry. Hooks activations, streams covariance with a bounded-memory Welford backend, and computes spectral, SVD, and novelty metrics — participation ratio, stable rank, linear CKA — as versioned artifact bundles on native and Hugging Face models.',
+    tags: ['PyTorch', 'PyPI'],
+    url: 'https://github.com/Vidit-01/representation-geometry',
+    repository: true,
   },
   {
-    id: 'attention-geometry',
-    type: 'Transformers',
-    title: 'Attention-Geometry-Dynamics',
+    id: 'residual-geometry',
+    type: 'Mechanistic Interp',
+    title: 'Residual-Stream Geometry in Transformers',
     description:
-      'A measurement study tracking the internal geometry of a small transformer language model throughout training. Rather than focusing on final performance, this project instruments a standard GPT-style architecture with 18 geometric metrics, covering representation isotropy, weight matrix structure, attention entropy, and Q/K asymmetry, and records how they evolve across 80 epochs.',
-    tags: ['Attention', 'LLM'],
-    repository: true
+      'Width study of residual-stream geometry in 6-layer GPT-style LMs (d=128/256/512) on WikiText-2. Effective rank increases with depth; capacity utilisation converges to ~79% across widths; d=128 generalises better than d=256, while d=512 overfits. Layer 1 drives the main representational change (CKA ~0.55); later layers refine.',
+    tags: ['PyTorch', 'Geometry'],
+    image: 'https://raw.githubusercontent.com/Vidit-01/transformer-residual-geometry/main/plots/utilisation_ratio_dynamics_midlayer.png',
+    url: 'https://github.com/Vidit-01/transformer-residual-geometry',
+    repository: true,
+  },
+  {
+    id: 'api-drift-agent',
+    type: 'Developer Tool',
+    title: 'API Drift Agent',
+    description:
+      'A CLI that statically diffs OpenAPI 3.x contracts against FastAPI/Pydantic codebases. A deterministic analyzer classifies endpoint, schema, and parameter drift; an optional LangChain layer (Ollama or Groq) explains source-of-truth and proposes patches. Rich TUI, JSON/CI gates, published on PyPI.',
+    tags: ['FastAPI', 'LangChain'],
+    image: 'https://raw.githubusercontent.com/Vidit-01/api-drift-agent/refs/heads/main/assets/first.gif',
+    caption: 'Fig 5.2 / Deterministic drift scan with agent explain layer',
+    url: 'https://github.com/Vidit-01/api-drift-agent',
+    repository: true,
+  },
+  {
+    id: 'torch-isoflops',
+    type: 'Scaling Laws',
+    title: 'Torch IsoFLOP',
+    description:
+      'Harness-agnostic PyTorch library for IsoFLOP / Chinchilla-style scaling experiments. Plans (N, D) grids under a fixed compute budget, counts FLOPs via module hooks, and fits L(N,D) laws plus isoFLOP parabolas with resumable JSONL logs.',
+    tags: ['PyTorch', 'IsoFLOP'],
+    url: 'https://github.com/Vidit-01/torch-isoflops',
+    repository: true,
+  },
+  {
+    id: 'origintrace',
+    type: 'Product',
+    title: 'OriginTrace: Recursive Supply-Chain Intelligence',
+    description:
+      'Supply-chain mapping platform that recursively traces supplier networks to raw materials using BOM/HSN logic, web data, and Gemini. Scores each node for SDN/OFAC sanctions, SEC financial risk, and climate disruption on a FastAPI + Next.js stack.',
+    tags: ['FastAPI', 'Next.js'],
+    image: 'https://raw.githubusercontent.com/Vidit-01/OriginTrace/refs/heads/main/Screenshot%202026-06-10%20205312.png',
+    url: 'https://github.com/Vidit-01/OriginTrace',
+    repository: true,
+  },
+  {
+    id: 'aria-voice-agent',
+    type: 'Product',
+    title: 'Aria: Overseas-Education Ecosystem',
+    description:
+      'Counseling stack combining a WhatsApp RAG bot, a LiveKit/Gemini voice agent, and student/admin web apps with resume analysis, lead triage, and session reporting. FastAPI, React, and Supabase.',
+    tags: ['LiveKit', 'Gemini'],
+    url: 'https://github.com/Vidit-01/aria-voice-agent',
+    repository: true,
+  },
+  {
+    id: 'isl-translate',
+    type: 'Applied ML',
+    title: 'SignSense: Real-Time Sign Language Translation',
+    description:
+      'Indian Sign Language pipeline from MediaPipe Holistic landmarks through a sequence classifier and TFLite export, with Gemini turning recognized signs into fluent sentences for accessibility-focused communication.',
+    tags: ['MediaPipe', 'TensorFlow'],
+    url: 'https://github.com/Vidit-01/ISLTranslate',
+    repository: true,
+  },
+  {
+    id: 'cognisense',
+    type: 'Applied ML',
+    title: 'CogniSense: Cognitive State Monitoring',
+    description:
+      'Productivity assistant that classifies Focused / Confused / Fatigued from MediaPipe face landmarks plus behaviour signals, then sends Groq nudges through a React dashboard over a FastAPI backend.',
+    tags: ['MediaPipe', 'FastAPI'],
+    url: 'https://github.com/Vidit-01/CogniSense',
+    repository: true,
   },
 ]
 
@@ -82,9 +165,9 @@ const contactRows = [
   { label: 'Name', value: 'Gupta, Vidit' },
   { label: 'Institution', value: 'DJSCE Mumbai' },
   { label: 'Email', value: 'viditanupgupta@gmail.com', href: 'mailto:viditanupgupta@gmail.com' },
-  { label: 'Codeforces', value: 'noobgrammer256', href: 'https://codeforces.com/profile/noobgrammer256' },
-  { label: 'Google Scholar', value: 'Vidit Gupta', href: 'https://scholar.google.com/' },
+  { label: 'LinkedIn', value: 'vidit-gupta3001', href: 'https://www.linkedin.com/in/vidit-gupta3001/' },
   { label: 'GitHub', value: 'Vidit-01', href: 'https://github.com/Vidit-01' },
+  { label: 'Codeforces', value: 'noobgrammer256', href: 'https://codeforces.com/profile/noobgrammer256' },
 ]
 
 function Sidebar({ activeId = 'abstract' }) {
@@ -93,7 +176,7 @@ function Sidebar({ activeId = 'abstract' }) {
       <div>
         <div className="brand-block">
           <h1>ARCHIVE.01</h1>
-          <p>Vol. 2024 / Portfolio</p>
+          <p>Vol. 2026 / Portfolio</p>
         </div>
 
         <nav className="archive-nav">
@@ -110,7 +193,7 @@ function Sidebar({ activeId = 'abstract' }) {
 
       <div className="sidebar-footer">
        
-        <a className="pdf-button" href="/Vidit_Resume.pdf" target="_blank" rel="noreferrer">Resume PDF</a>
+        <a className="pdf-button" href="/Vidit_Resume.pdf?v=20260822" target="_blank" rel="noreferrer">Resume PDF</a>
         
       </div>
     </aside>
@@ -208,15 +291,17 @@ function CompactProjectCard({ project, className = '' }) {
           <figcaption>Loss Spike #009</figcaption>
         </figure>
       ) : null}
-      <a className="repo-link" href="#project">
-        <span>View Repository</span>
-        <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-      </a>
+      {project.url ? (
+        <a className="repo-link" href={project.url} target="_blank" rel="noreferrer">
+          <span>View Repository</span>
+          <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+        </a>
+      ) : null}
     </article>
   )
 }
 
-function TimelineItem({ role, company, start, end, children }) {
+function TimelineItem({ role, company, start, end, bullets, children }) {
   return (
     <article className="timeline-item">
       <div className="venue-label">
@@ -224,23 +309,15 @@ function TimelineItem({ role, company, start, end, children }) {
       </div>
       <p className="citation">{company}</p>
       <h3>{role}</h3>
-      {/* <dl className="work-meta">
-        <div>
-          <dt>Role</dt>
-          <dd>{role}</dd>
-        </div>
-        <div>
-          <dt>Company</dt>
-          <dd>{company}</dd>
-        </div>
-        <div>
-          <dt>Time</dt>
-          <dd>
-            {start} - {end}
-          </dd>
-        </div>
-      </dl> */}
-      <p>{children}</p>
+      {bullets?.length ? (
+        <ul className="timeline-bullets">
+          {bullets.map((bullet) => (
+            <li key={bullet}>{bullet}</li>
+          ))}
+        </ul>
+      ) : (
+        <p>{children}</p>
+      )}
     </article>
   )
 }
@@ -256,26 +333,29 @@ function FeaturedProjectCard({ project }) {
         <h3>{project.title}</h3>
         <p>{project.description}</p>
       </div>
-      <figure className="taped-image blueprint-image">
-        <img src={project.image} alt="" />
-        <figcaption>{project.caption}</figcaption>
-        <span className="material-symbols-outlined" aria-hidden="true">open_in_new</span>
-      </figure>
-      <a className="repo-link" href="#project">
-        <span>View Repository</span>
-        <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
-      </a>
+      {project.image ? (
+        <figure className="taped-image blueprint-image">
+          <img src={project.image} alt="" />
+          <figcaption>{project.caption}</figcaption>
+          <span className="material-symbols-outlined" aria-hidden="true">open_in_new</span>
+        </figure>
+      ) : null}
+      {project.url ? (
+        <a className="repo-link" href={project.url} target="_blank" rel="noreferrer">
+          <span>View Repository</span>
+          <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+        </a>
+      ) : null}
     </article>
   )
 }
 
 function ProjectsArchive({ expanded = false }) {
   const visibleProjects = expanded ? projects : projects.slice(0, 4)
-  const [featured, repository, apiDrift, postmortem, ...secondary] = visibleProjects
-  const leftColumnProjects = [postmortem]
-  const rightColumnProjects = expanded
-    ? [repository, apiDrift, ...secondary]
-    : [repository, apiDrift]
+  const featured = visibleProjects.find((project) => project.feature) ?? visibleProjects[0]
+  const remaining = visibleProjects.filter((project) => project.id !== featured?.id)
+  const leftColumnProjects = remaining.slice(0, 1)
+  const rightColumnProjects = remaining.slice(1)
 
   return (
     <div className={`projects-archive ${expanded ? 'expanded' : ''}`}>
@@ -333,23 +413,23 @@ function EducationSection() {
         </figure>
 
         <div className="edu-copy">
-          <a className="institution-card" href="#education">
+          <a className="institution-card" href="https://djsce.ac.in/" target="_blank" rel="noreferrer">
             <span>Institutional Link</span>
             Dwarkadas J. Sanghvi College of Engineering
           </a>
           <p>
             Currently pursuing a <mark>B.Tech in Information Technology</mark> at Dwarkadas J. Sanghvi College of Engineering,
-            Mumbai (2024-2028)
+            Mumbai (Sep 2024 – 2028). GPA: 9.1
           </p>
         </div>
 
         <div className="edu-copy lower">
-          <a className="institution-card" href="#education">
+          <a className="institution-card" href="https://navodaya.gov.in/" target="_blank" rel="noreferrer">
             <span>Institutional Link</span>
             Jawahar Navodaya Vidyalaya, Palghar
           </a>
       <p>
-            Jawahar Navodaya Vidyalaya is a selective government residential school, admitting students through a national entrance exam. I studied here from Grade 6 through Grade 12 (2017-2024), living on campus away from home. It is also where I first got introduced to <mark>coding</mark>.
+            Jawahar Navodaya Vidyalaya is a selective government residential school, admitting students through a national entrance exam. I studied here from Grade 6 through Grade 12 (Jul 2016 – Apr 2024), living on campus away from home. Class 10: 95.4%. Class 12: 92%. It is also where I first got introduced to <mark>coding</mark>.
        </p>
         </div>
 
@@ -402,6 +482,21 @@ function AchievementCard({ achievement }) {
 }
 
 function App() {
+  const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
+  const isBrainrotPage = pathname === '/brainrot'
+
+  if (isBrainrotPage) {
+    return (
+      <Suspense fallback={<div className="brainrot-boot" />}>
+        <Brainrot />
+      </Suspense>
+    )
+  }
+
+  return <Portfolio />
+}
+
+function Portfolio() {
   const pathname = window.location.pathname.replace(/\/+$/, '') || '/'
   const isProjectsPage = pathname === '/projects'
   const [activeId, setActiveId] = useState(isProjectsPage ? 'project' : 'abstract')
@@ -531,7 +626,7 @@ function App() {
             <SectionHeader number="1" title="Abstract" eyebrow="Manuscript summary" />
             <div className="abstract-card">
               <p>
-                I'm a second-year CS undergrad at DJSCE Mumbai, and I'm obsessed with understanding the internal geometry of models. I have been exploring the initialization effects of Transformers on Wq and Wk matrix. I love build things from scratch to understand them. I'm actively looking to do research, bring whatever I have, and learn the rest.
+                I'm an Information Technology undergraduate at DJSCE Mumbai (2024–2028, GPA 9.1). I study the internal geometry of transformers — how query and key projections, residual streams, and attention rank evolve during training — and I publish measurement tools so those observations are reproducible. I am an undergraduate research assistant at IIT Roorkee on geospatial time-series forecasting for district-level drought prediction. I like building systems from scratch to understand them. I'm looking to do research: I'll bring what I have, and learn the rest.
               </p>
             </div>
           </section>
@@ -543,7 +638,7 @@ function App() {
                 I love to understand how things work. For me the mechanism below the surface is as important as the outcome. When I started to learn coding when I was thirteen, it caught my interest as I could understand how some of the technology works.   
               </p>
               <p>
-                I would like to bring the joy of understanding to AI Research, which in turn might help us in the goal of making a efficient superintelligent system which works with people to solve greatest problems in Physics, Mathematics and formal Sciences.
+                I want to bring that same habit of looking under the surface to AI research — measuring how transformers actually use their residual stream and attention geometry, not only how they score on a loss curve. Two manuscripts from this work are under review. Longer term I care about efficient systems that work with people on hard problems in physics, mathematics, and the formal sciences.
               </p>
             </div>
           </section>
@@ -551,17 +646,29 @@ function App() {
           <EducationSection />
 
           <section className="page-section" id="work-exp">
-            <SectionHeader number="4" title="Work Experience" eyebrow="Applied practice" />
+            <SectionHeader number="4" title="Work Experience" eyebrow="Research appointments" />
             <div className="publication-stack">
               <TimelineItem
-                role="Machine Learning Intern"
-                company="IIT Roorkee"
+                role="Collaborative Researcher"
+                company="Advanced Vision Labs · Remote"
+                start="Aug 2026"
+                end="Present"
+                bullets={[
+                  'Collaborating on research in representation learning, investigating the geometry and structure of learned representations in modern deep neural networks.',
+                  'Reproducing and experimentally analyzing recent representation-learning methods, studying the effects of normalization and feature alignment across pretrained models.',
+                ]}
+              />
+              <TimelineItem
+                role="Undergraduate Research Assistant"
+                company="IIT Roorkee · Remote"
                 start="May 2026"
                 end="Present"
-              >
-                Contributing to a research project on drought prediction in India using climatic and environmental datasets. Working on exploratory analysis, feature engineering, and evaluating machine learning approaches for forecasting drought conditions. Gaining experience with geospatial and time-series data while supporting model development and experimentation.
-              </TimelineItem>
-              
+                bullets={[
+                  'Conducting research on geospatial time-series forecasting for district-level drought prediction across India using a proprietary multi-year dataset.',
+                  'Surveyed recent literature on spatiotemporal forecasting and drought prediction, analyzing Transformer-, graph-, and attention-based architectures to identify suitable modeling strategies.',
+                  'Designed candidate deep learning architectures integrating spatial attention with temporal sequence modeling for nationwide drought forecasting.',
+                ]}
+              />
             </div>
           </section>
 

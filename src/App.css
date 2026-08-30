@@ -637,6 +637,16 @@ body {
   line-height: 1.35;
 }
 
+.timeline-bullets {
+  margin: 0;
+  padding-left: 1.15em;
+  color: var(--ink);
+}
+
+.timeline-bullets li + li {
+  margin-top: 10px;
+}
+
 .venue-label {
   position: absolute;
   top: 0;
@@ -669,6 +679,7 @@ body {
 
 .publication-card > p,
 .timeline-item > p,
+.timeline-bullets,
 .project-card p {
   max-width: 760px;
   margin: 0;

@@ -1,13 +1,13 @@
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:14354C,50:1F8ACB,100:5C3EE8&height=220&section=header&text=Vidit&fontSize=50&fontColor=ffffff&animation=twinkling&fontAlignY=32&desc=Machine%20Learning%20Enthusiast%20|%20Research-Oriented%20Student%20|%20IT%20Student&descSize=16&descAlignY=55" width = "100%"/>
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0:14354C,50:1F8ACB,100:5C3EE8&height=220&section=header&text=Vidit&fontSize=50&fontColor=ffffff&animation=twinkling&fontAlignY=32&desc=Transformer%20Geometry%20|%20Undergraduate%20Research%20|%20IT%20@%20DJSCE&descSize=16&descAlignY=55" width = "100%"/>
 <div>  
 
-I'm Vidit Gupta, a IT student and tech enthusiast. I am pretty excited to learn new things and work on amazing projects
+I'm Vidit Gupta, an Information Technology undergraduate at DJSCE Mumbai (GPA 9.1) and an undergraduate research assistant at IIT Roorkee. I study the internal geometry of transformers and build the measurement tools to make those observations reproducible.
 
 >“Simplicity is a great virtue, but it requires hard work to achieve it.” - Edsger Dijkstra
 
 # 🚀 Interests
 
-My Current Interests lie in Deep Learning as I have started exploring the area, and implementing few papers as I study. 
+My current work is on transformer representation geometry — residual-stream rank, attention Q/K dynamics, and streaming measurement infrastructure (`representation-geometry` on PyPI). I also implement classic deep learning papers from scratch as I study them. 
 
 ## 🛠 Tech Stack
 
@@ -24,6 +24,7 @@ My Current Interests lie in Deep Learning as I have started exploring the area, 
 <!-- ML / DL -->
 <img src="https://img.shields.io/badge/PyTorch-EE4C2C.svg?style=for-the-badge&logo=pytorch&logoColor=white" />
 <img src="https://img.shields.io/badge/TensorFlow-FF6F00.svg?style=for-the-badge&logo=tensorflow&logoColor=white" />
+<img src="https://img.shields.io/badge/Hugging%20Face-FFD21E.svg?style=for-the-badge&logo=huggingface&logoColor=black" />
 <img src="https://img.shields.io/badge/NumPy-013243.svg?style=for-the-badge&logo=numpy&logoColor=white" />
 <img src="https://img.shields.io/badge/Pandas-150458.svg?style=for-the-badge&logo=pandas&logoColor=white" />
 <img src="https://img.shields.io/badge/Matplotlib-006699.svg?style=for-the-badge&logo=matplotlib&logoColor=white" />
@@ -47,6 +48,7 @@ My Current Interests lie in Deep Learning as I have started exploring the area, 
 <img src="https://img.shields.io/badge/CSS3-1572B6.svg?style=for-the-badge&logo=css3&logoColor=white" />
 <img src="https://img.shields.io/badge/React-20232A.svg?style=for-the-badge&logo=react&logoColor=61DAFB" />
 <img src="https://img.shields.io/badge/Flask-000000.svg?style=for-the-badge&logo=flask&logoColor=white" />
+<img src="https://img.shields.io/badge/FastAPI-009688.svg?style=for-the-badge&logo=fastapi&logoColor=white" />
 
 <br/>
 
