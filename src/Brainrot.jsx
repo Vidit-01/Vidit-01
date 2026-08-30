@@ -233,7 +233,7 @@ export default function Brainrot() {
           ))}
 
           <div className="brainrot-duo" data-wander data-x="80" data-y="280" data-rot="-2">
-            <p className="sahur-yell">TUNG TUNG TUNG SAHUR</p>
+            <p className="sahur-yell">big TTT</p>
             <div className="duo-bodies">
               <img className="duo-chika" src="/brainrot/anime-dance.gif" alt="" />
               <img className="duo-sahur" src="/brainrot/tung-tung-sahur.png" alt="" />
