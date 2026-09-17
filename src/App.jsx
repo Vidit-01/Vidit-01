@@ -16,6 +16,16 @@ const navItems = [
 
 const publications = [
   {
+    id: 'continuous-attention-geometry',
+    tone: 'light',
+    citation: 'Gupta, V. (2026)',
+    title: 'A Continuous Space of Attention Projection Geometries at Initialization',
+    label: 'Under Review',
+    description:
+      'Treats the missing relation between query and key initializations as a continuous family with shared, orthogonal, and independent residuals at fixed weight energy. Closed-form finite-width formulas for attention-score mean and variance, plus sweeps that produce uniform, peaked, self-focused, and mid-entropy initial patterns — showing joint query–key geometry is a real finite-width degree of freedom.',
+    pdf: '/papers/querykey-geometry.pdf',
+  },
+  {
     id: 'attention-PR-geometry',
     tone: 'light',
     citation: 'Gupta, V., Nadkarni, S., Chaudhari, M., Sawant, V., Satam, P. (2026)',
@@ -23,6 +33,7 @@ const publications = [
     label: 'Under Review',
     description:
       'This paper shows that query and key projections evolve asymmetrically during training — queries expand while keys specialize — causally controlling attention sharpness. Initialization acts as a persistent geometric prior shaping these dynamics even when validation losses converge.',
+    pdf: '/papers/query-expansion-key-specialization.pdf',
   },
   {
     id: 'residual-stream-geometry',
@@ -32,6 +43,7 @@ const publications = [
     label: 'Under Review',
     description:
       'A controlled width study of residual-stream geometry in GPT-style language models on WikiText-2. The hypothesis that effective rank decreases with depth does not hold: rank rises with depth and training, mid-layer capacity utilisation converges to ~79% across widths, and the narrowest model (d=128) generalises better than wider, over-provisioned ones.',
+    pdf: '/papers/residual-stream-geometry.pdf',
   },
 ]
 
@@ -164,6 +176,7 @@ const projects = [
 const contactRows = [
   { label: 'Name', value: 'Gupta, Vidit' },
   { label: 'Institution', value: 'DJSCE Mumbai' },
+  { label: 'Phone', value: '+91 89835 20121', href: 'tel:+918983520121' },
   { label: 'Email', value: 'viditanupgupta@gmail.com', href: 'mailto:viditanupgupta@gmail.com' },
   { label: 'LinkedIn', value: 'vidit-gupta3001', href: 'https://www.linkedin.com/in/vidit-gupta3001/' },
   { label: 'GitHub', value: 'Vidit-01', href: 'https://github.com/Vidit-01' },
@@ -193,7 +206,7 @@ function Sidebar({ activeId = 'abstract' }) {
 
       <div className="sidebar-footer">
        
-        <a className="pdf-button" href="/Vidit_Resume.pdf?v=20260822" target="_blank" rel="noreferrer">Resume PDF</a>
+        <a className="pdf-button" href="/Vidit_Resume.pdf?v=20260917" target="_blank" rel="noreferrer">Resume PDF</a>
         
       </div>
     </aside>
@@ -452,21 +465,12 @@ function PublicationCard({ publication }) {
       <p className="citation">{publication.citation}</p>
       <h3>{publication.title}</h3>
       <p>{publication.description}</p>
-
-      {/* {publication.details?.length ? (
-        <div className="findings-grid">
-          {publication.details.map((detail) => (
-            <div key={detail.label}>
-              <span>{detail.label}</span>
-              <p>{detail.value}</p>
-            </div>
-          ))}
-        </div>
-      ) : null} */}
-
-      {/* {publication.note ? <blockquote>{publication.note}</blockquote> : null} */}
-
-      {/* <Tags items={publication.tags} /> */}
+      {publication.pdf ? (
+        <a className="repo-link" href={publication.pdf} target="_blank" rel="noreferrer">
+          <span>View Paper PDF</span>
+          <span className="material-symbols-outlined" aria-hidden="true">arrow_forward</span>
+        </a>
+      ) : null}
     </article>
   )
 }
@@ -626,7 +630,7 @@ function Portfolio() {
             <SectionHeader number="1" title="Abstract" eyebrow="Manuscript summary" />
             <div className="abstract-card">
               <p>
-                I'm an Information Technology undergraduate at DJSCE Mumbai (2024–2028, GPA 9.1). I study the internal geometry of transformers — how query and key projections, residual streams, and attention rank evolve during training — and I publish measurement tools so those observations are reproducible. I am an undergraduate research assistant at IIT Roorkee on geospatial time-series forecasting for district-level drought prediction. I like building systems from scratch to understand them. I'm looking to do research: I'll bring what I have, and learn the rest.
+                I'm an Information Technology undergraduate at DJSCE Mumbai (2024–2028, GPA 9.1). I study the internal geometry of transformers — how query and key projections, residual streams, and attention rank evolve during training — and I publish measurement tools so those observations are reproducible. I am an undergraduate research assistant at IIT Roorkee on geospatial time-series forecasting for district-level drought prediction. I also collaborate with the University of Gävle on pedestrian intent prediction with occlusion-aware reasoning, and with Advanced Vision Labs on representation-learning geometry. I like building systems from scratch to understand them. I'm looking to do research: I'll bring what I have, and learn the rest.
               </p>
             </div>
           </section>
@@ -638,7 +642,7 @@ function Portfolio() {
                 I love to understand how things work. For me the mechanism below the surface is as important as the outcome. When I started to learn coding when I was thirteen, it caught my interest as I could understand how some of the technology works.   
               </p>
               <p>
-                I want to bring that same habit of looking under the surface to AI research — measuring how transformers actually use their residual stream and attention geometry, not only how they score on a loss curve. Two manuscripts from this work are under review. Longer term I care about efficient systems that work with people on hard problems in physics, mathematics, and the formal sciences.
+                I want to bring that same habit of looking under the surface to AI research — measuring how transformers actually use their residual stream and attention geometry, not only how they score on a loss curve. Three manuscripts from this work are under review, including a study of continuous attention-projection geometries at initialization. Longer term I care about efficient systems that work with people on hard problems in physics, mathematics, and the formal sciences.
               </p>
             </div>
           </section>
@@ -648,6 +652,16 @@ function Portfolio() {
           <section className="page-section" id="work-exp">
             <SectionHeader number="4" title="Work Experience" eyebrow="Research appointments" />
             <div className="publication-stack">
+              <TimelineItem
+                role="Research Collaborator"
+                company="University of Gävle · Remote"
+                start="Aug 2026"
+                end="Present"
+                bullets={[
+                  'Collaborating with Dr. R. P. Durga Prasad Bavirisetti on research in pedestrian intent prediction with occlusion-aware reasoning.',
+                  'Reviewing recent literature on pedestrian behavior prediction, visual occlusion, and uncertainty-aware reasoning for autonomous driving.',
+                ]}
+              />
               <TimelineItem
                 role="Collaborative Researcher"
                 company="Advanced Vision Labs · Remote"
@@ -667,6 +681,36 @@ function Portfolio() {
                   'Conducting research on geospatial time-series forecasting for district-level drought prediction across India using a proprietary multi-year dataset.',
                   'Surveyed recent literature on spatiotemporal forecasting and drought prediction, analyzing Transformer-, graph-, and attention-based architectures to identify suitable modeling strategies.',
                   'Designed candidate deep learning architectures integrating spatial attention with temporal sequence modeling for nationwide drought forecasting.',
+                ]}
+              />
+              <TimelineItem
+                role="Research Mentee → Vice Chairperson (Research)"
+                company="DJ InIT.ai · Mumbai, India"
+                start="Dec 2025"
+                end="Present"
+                bullets={[
+                  'Lead a student research club focused on machine learning, organizing technical sessions, paper reading groups, and research discussions.',
+                  'Coordinate research collaborations and mentor members in exploring and implementing machine learning research.',
+                ]}
+              />
+              <TimelineItem
+                role="Technical Member"
+                company="DJS Codestars · Mumbai, India"
+                start="Sep 2024"
+                end="Jul 2026"
+                bullets={[
+                  'Authored competitive programming problems for weekly contests engaging 150+ participants.',
+                  'Contributed to organizing CodeUncode, collaborating with teams on contest preparation and website development.',
+                ]}
+              />
+              <TimelineItem
+                role="ML Research Member"
+                company="GDG DJSCE · Mumbai, India"
+                start="Oct 2025"
+                end="Jul 2026"
+                bullets={[
+                  'First author of a research paper under review on redundancy reduction in transformer hidden-state representations.',
+                  'Participated in research paper reading sessions and technical discussions on modern machine learning.',
                 ]}
               />
             </div>
