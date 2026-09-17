@@ -214,7 +214,7 @@ function Sidebar({ activeId = 'abstract' }) {
       <div>
         <div className="brand-block">
           <p className="brand-mark">ARCHIVE.01</p>
-          <p>Vidit Gupta · Vol. 2026</p>
+          <p>Vol. 2026 / Portfolio</p>
         </div>
 
         <nav className="archive-nav">
@@ -271,13 +271,12 @@ function AuthorMetadata({ collapsed, onOpen, onClose }) {
   )
 }
 
-function SectionHeader({ number, title, eyebrow }) {
+function SectionHeader({ number, title }) {
   return (
     <div className="section-header">
       <div className="section-rule">
         <span>Section [{number}]</span>
       </div>
-      <p>{eyebrow}</p>
       <h2>{title}</h2>
     </div>
   )
@@ -397,11 +396,7 @@ function ProjectsArchive({ expanded = false }) {
 
   return (
     <div className={`projects-archive ${expanded ? 'expanded' : ''}`}>
-      <SectionHeader
-        number="5"
-        title="Projects"
-        eyebrow={expanded ? 'Expanded research archive' : 'Featured research artifacts'}
-      />
+      <SectionHeader number="5" title="Projects" />
 
       <div className="projects-layout">
         <div className="projects-column projects-column-main">
@@ -636,7 +631,6 @@ function Portfolio() {
         {isProjectsPage ? (
           <article className="manuscript project-manuscript">
             <section className="title-area page-section projects-title" id="project">
-              <p className="red-script">Vidit Gupta / Vidit ML / Project Build Log</p>
               <h1>
                 Project Archive <br />
                 <em>Extended Index.</em>
@@ -650,7 +644,6 @@ function Portfolio() {
         ) : (
         <article className="manuscript">
           <section className="title-area page-section" id="title">
-            <p className="red-script">Vidit · Vidit ML · Vidit Research · Vidit IT</p>
             <h1>
               Vidit Gupta <br />
               <em>Research Portfolio.</em>
@@ -658,7 +651,7 @@ function Portfolio() {
           </section>
 
           <section className="page-section" id="abstract">
-            <SectionHeader number="1" title="Abstract" eyebrow="Manuscript summary" />
+            <SectionHeader number="1" title="Abstract" />
             <div className="abstract-card">
               <p>
                 I'm Vidit Gupta — an Information Technology undergraduate at DJSCE Mumbai (2024–2028, GPA 9.1) working across Vidit ML / Vidit Research on the internal geometry of transformers: how query and key projections, residual streams, and attention rank evolve during training. I publish measurement tools so those observations are reproducible. I am an undergraduate research assistant at IIT Roorkee on geospatial time-series forecasting for district-level drought prediction. I also collaborate with the University of Gävle on pedestrian intent prediction with occlusion-aware reasoning, and with Advanced Vision Labs on representation-learning geometry. I like building systems from scratch to understand them. I'm looking to do research: I'll bring what I have, and learn the rest.
@@ -667,7 +660,7 @@ function Portfolio() {
           </section>
 
           <section className="page-section" id="introduction">
-            <SectionHeader number="2" title="Introduction" eyebrow="Research position" />
+            <SectionHeader number="2" title="Introduction" />
             <div className="two-column-text">
               <p>
                 I love to understand how things work. For me the mechanism below the surface is as important as the outcome. When I started to learn coding when I was thirteen, it caught my interest as I could understand how some of the technology works.   
@@ -681,7 +674,7 @@ function Portfolio() {
           <EducationSection />
 
           <section className="page-section" id="work-exp">
-            <SectionHeader number="4" title="Work Experience" eyebrow="Research appointments" />
+            <SectionHeader number="4" title="Work Experience" />
             <div className="publication-stack">
               <TimelineItem
                 role="Research Collaborator"
@@ -722,7 +715,7 @@ function Portfolio() {
           </section>
 
           <section className="page-section" id="publications">
-            <SectionHeader number="6" title="Publications" eyebrow="Reference list" />
+            <SectionHeader number="6" title="Publications" />
             <div className="publication-stack">
               {publications.map((publication) => (
                 <PublicationCard publication={publication} key={publication.id} />
@@ -731,7 +724,7 @@ function Portfolio() {
           </section>
 
           <section className="page-section" id="achievements">
-            <SectionHeader number="7" title="Achievements" eyebrow="Selected recognitions" />
+            <SectionHeader number="7" title="Achievements" />
             <div className="achievement-stack">
               {achievements.map((achievement) => (
                 <AchievementCard achievement={achievement} key={achievement.id} />
@@ -740,7 +733,7 @@ function Portfolio() {
           </section>
 
           <section className="page-section" id="extracurriculars">
-            <SectionHeader number="8" title="Extracurriculars" eyebrow="Clubs & committees · DJSCE" />
+            <SectionHeader number="8" title="Extracurriculars" />
             <p className="extra-affiliation">Student clubs and committees at Dwarkadas J. Sanghvi College of Engineering.</p>
             <ul className="extra-list">
               {extracurriculars.map((item) => (
@@ -759,7 +752,7 @@ function Portfolio() {
           </section>
 
           <section className="page-section" id="hobbies">
-            <SectionHeader number="9" title="Hobbies" eyebrow="Human factor" />
+            <SectionHeader number="9" title="Hobbies" />
 
             {/* Two-column: left = quote + text, right = Steins;Gate image */}
             <div className="hobby-header">
@@ -788,11 +781,23 @@ function Portfolio() {
         )}
 
         <footer className="page-footer">
-          <p className="footer-identity">Vidit Gupta · Vidit ML · Vidit Research · Vidit IT</p>
-          <div>
-            <a href="/#title">Top</a>
-            <a href="/#publications">Citations</a>
-            <a href="/#hobbies">Archive Index</a>
+          <div className="footer-brand">
+            <img src="/brand-square.png" alt="Vidit Gupta brand mark" width="40" height="40" />
+            <div>
+              <strong>Vidit Gupta</strong>
+              <span>ML Research · IT @ DJSCE</span>
+            </div>
+          </div>
+          <nav className="footer-nav" aria-label="Footer">
+            <a href="/#abstract">Abstract</a>
+            <a href="/#project">Projects</a>
+            <a href="/#publications">Publications</a>
+            <a href="/projects">Archive</a>
+          </nav>
+          <div className="footer-links">
+            <a href="https://github.com/Vidit-01" target="_blank" rel="noreferrer">GitHub</a>
+            <a href="https://www.linkedin.com/in/vidit-gupta3001/" target="_blank" rel="noreferrer">LinkedIn</a>
+            <a href="/Vidit_Resume.pdf?v=20260917" target="_blank" rel="noreferrer">Resume</a>
           </div>
         </footer>
       </main>

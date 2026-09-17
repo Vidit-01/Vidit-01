@@ -1,0 +1,26 @@
+{
+  "name": "Vidit Gupta — ML Research Portfolio",
+  "short_name": "Vidit Gupta",
+  "description": "Portfolio of Vidit Gupta (Vidit ML / Vidit Research / Vidit IT) — transformer geometry and undergraduate ML research.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a0a",
+  "theme_color": "#f4efe6",
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ]
+}
