@@ -733,7 +733,7 @@ function Portfolio() {
             </div>
           </section>
 
-          <section className="page-section extracurriculars-section" id="extracurriculars">
+          <section className="page-section" id="extracurriculars">
             <SectionHeader number="8" title="Extracurriculars" eyebrow="Clubs & committees · DJSCE" />
             <p className="extra-affiliation">Student clubs and committees at Dwarkadas J. Sanghvi College of Engineering.</p>
             <ul className="extra-list">
