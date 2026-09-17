@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630" role="img" aria-label="Vidit Gupta">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f4efe6"/>
+      <stop offset="100%" stop-color="#e8dfd0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg)"/>
+  <rect x="48" y="48" width="1104" height="534" fill="none" stroke="#1a1a1a" stroke-width="2"/>
+  <text x="96" y="180" fill="#8b1e1e" font-family="Georgia, serif" font-size="28" font-style="italic">Vidit ML · Vidit Research · Vidit IT</text>
+  <text x="96" y="300" fill="#111111" font-family="Georgia, serif" font-size="96" font-weight="700">Vidit Gupta</text>
+  <text x="96" y="380" fill="#333333" font-family="Georgia, serif" font-size="36" font-style="italic">Research Portfolio</text>
+  <text x="96" y="480" fill="#444444" font-family="ui-monospace, monospace" font-size="22" letter-spacing="2">TRANSFORMER GEOMETRY · DJSCE · IIT ROORKEE</text>
+  <text x="96" y="530" fill="#666666" font-family="ui-monospace, monospace" font-size="18">vidit-01.vercel.app</text>
+</svg>

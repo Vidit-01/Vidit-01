@@ -161,7 +161,7 @@ export default function Brainrot() {
     window.addEventListener('pointerdown', unlockAudio, { once: true })
     window.addEventListener('keydown', unlockAudio, { once: true })
     return () => {
-      document.title = "Vidit's Portfolio"
+      document.title = 'Vidit Gupta | ML Research & IT Portfolio'
       document.documentElement.classList.remove('brainrot-lock')
       document.body.classList.remove('brainrot-lock')
       window.clearTimeout(kick)

@@ -58,13 +58,15 @@
   --sidebar-tint: rgba(55, 98, 125, 0.1);
 }
 
-.brand-block h1 {
+.brand-block h1,
+.brand-block .brand-mark {
   margin: 0;
   border-bottom: 1px solid var(--line);
   padding-bottom: 18px;
   font-family: var(--serif);
   font-size: 32px;
   line-height: 1;
+  color: inherit;
 }
 
 .brand-block p,
@@ -445,6 +447,7 @@ body {
   text-align: right;
 }
 
+.title-area h1,
 .title-area h2 {
   margin: 0;
   color: #000;
@@ -455,6 +458,7 @@ body {
   line-height: 0.96;
 }
 
+.title-area h1 em,
 .title-area h2 em {
   display: block;                      /* Pushes the em to its own line clearly */
   font-size: clamp(32px, 4.5vw, 44px); /* Make "Research Portfolio" smaller */
@@ -1445,6 +1449,12 @@ mark {
   font-size: 12px;
 }
 
+.page-footer .footer-identity {
+  margin: 0;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
 .page-footer div {
   display: flex;
   gap: 34px;
@@ -1645,10 +1655,12 @@ mark {
     line-height: 1.45;
   }
 
+  .title-area h1,
   .title-area h2 {
     font-size: 46px;
   }
 
+  .title-area h1 em,
   .title-area h2 em {
     font-size: 34px;
   }
