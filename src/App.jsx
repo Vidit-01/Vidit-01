@@ -782,7 +782,7 @@ function Portfolio() {
 
         <footer className="page-footer">
           <div className="footer-brand">
-            <img src="/brand-square.png" alt="Vidit Gupta brand mark" width="40" height="40" />
+            <img src="/favicon.png" alt="Vidit Gupta brand mark" width="40" height="40" />
             <div>
               <strong>Vidit Gupta</strong>
               <span>ML Research · IT @ DJSCE</span>
