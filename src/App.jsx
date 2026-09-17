@@ -11,7 +11,8 @@ const navItems = [
   ['05', 'Projects', 'code_blocks', 'project'],
   ['06', 'Publications', 'format_list_bulleted', 'publications'],
   ['07', 'Achievements', 'workspace_premium', 'achievements'],
-  ['08', 'Hobbies', 'favorite', 'hobbies'],
+  ['08', 'Extra Curr', 'groups', 'extracurriculars'],
+  ['09', 'Hobbies', 'favorite', 'hobbies'],
 ]
 
 const publications = [
@@ -683,36 +684,6 @@ function Portfolio() {
                   'Designed candidate deep learning architectures integrating spatial attention with temporal sequence modeling for nationwide drought forecasting.',
                 ]}
               />
-              <TimelineItem
-                role="Research Mentee → Vice Chairperson (Research)"
-                company="DJ InIT.ai · Mumbai, India"
-                start="Dec 2025"
-                end="Present"
-                bullets={[
-                  'Lead a student research club focused on machine learning, organizing technical sessions, paper reading groups, and research discussions.',
-                  'Coordinate research collaborations and mentor members in exploring and implementing machine learning research.',
-                ]}
-              />
-              <TimelineItem
-                role="Technical Member"
-                company="DJS Codestars · Mumbai, India"
-                start="Sep 2024"
-                end="Jul 2026"
-                bullets={[
-                  'Authored competitive programming problems for weekly contests engaging 150+ participants.',
-                  'Contributed to organizing CodeUncode, collaborating with teams on contest preparation and website development.',
-                ]}
-              />
-              <TimelineItem
-                role="ML Research Member"
-                company="GDG DJSCE · Mumbai, India"
-                start="Oct 2025"
-                end="Jul 2026"
-                bullets={[
-                  'First author of a research paper under review on redundancy reduction in transformer hidden-state representations.',
-                  'Participated in research paper reading sessions and technical discussions on modern machine learning.',
-                ]}
-              />
             </div>
           </section>
 
@@ -738,8 +709,15 @@ function Portfolio() {
             </div>
           </section>
 
+          <section className="page-section" id="extracurriculars">
+            <SectionHeader number="8" title="Extracurriculars" eyebrow="Clubs & committees" />
+            <p className="closing-note extracurricular-note">
+              DJ InIT.ai — Vice Chairperson (Research) · DJS Codestars — Technical Member · GDG DJSCE — ML Research Member
+            </p>
+          </section>
+
           <section className="page-section" id="hobbies">
-            <SectionHeader number="8" title="Hobbies" eyebrow="Human factor" />
+            <SectionHeader number="9" title="Hobbies" eyebrow="Human factor" />
 
             {/* Two-column: left = quote + text, right = Steins;Gate image */}
             <div className="hobby-header">

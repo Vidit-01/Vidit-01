@@ -48,6 +48,11 @@
   --sidebar-tint: rgba(154, 60, 50, 0.1);
 }
 
+.sidebar[data-active-section='extracurriculars'] {
+  --sidebar-accent: #6b5344;
+  --sidebar-tint: rgba(107, 83, 68, 0.1);
+}
+
 .sidebar[data-active-section='hobbies'] {
   --sidebar-accent: #37627d;
   --sidebar-tint: rgba(55, 98, 125, 0.1);
@@ -1271,6 +1276,14 @@ mark {
 
 .hobby-header-left .closing-note {
   margin-bottom: 0;
+}
+
+.extracurricular-note {
+  margin: 0;
+  font-family: var(--mono);
+  font-size: 13px;
+  letter-spacing: 0.02em;
+  color: var(--ink-soft);
 }
 
 .hobby-quote {
