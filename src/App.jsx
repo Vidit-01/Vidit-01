@@ -48,6 +48,30 @@ const publications = [
   },
 ]
 
+const extracurriculars = [
+  {
+    id: 'init-ai',
+    org: 'DJ InIT.ai',
+    role: 'Vice Chairperson (Research)',
+    dates: 'Dec 2025 – Present',
+    note: 'Lead ML paper groups and mentor club research.',
+  },
+  {
+    id: 'codestars',
+    org: 'DJS Codestars',
+    role: 'Technical Member',
+    dates: 'Sep 2024 – Jul 2026',
+    note: 'Authored contest problems; helped run CodeUncode.',
+  },
+  {
+    id: 'gdg',
+    org: 'GDG DJSCE',
+    role: 'ML Research Member',
+    dates: 'Oct 2025 – Jul 2026',
+    note: 'First-author paper on transformer representation redundancy.',
+  },
+]
+
 const achievements = [
   {
     id: 'best-student-teacher',
@@ -709,11 +733,23 @@ function Portfolio() {
             </div>
           </section>
 
-          <section className="page-section" id="extracurriculars">
-            <SectionHeader number="8" title="Extracurriculars" eyebrow="Clubs & committees" />
-            <p className="closing-note extracurricular-note">
-              DJ InIT.ai — Vice Chairperson (Research) · DJS Codestars — Technical Member · GDG DJSCE — ML Research Member
-            </p>
+          <section className="page-section extracurriculars-section" id="extracurriculars">
+            <SectionHeader number="8" title="Extracurriculars" eyebrow="Clubs & committees · DJSCE" />
+            <p className="extra-affiliation">Student clubs and committees at Dwarkadas J. Sanghvi College of Engineering.</p>
+            <ul className="extra-list">
+              {extracurriculars.map((item) => (
+                <li key={item.id}>
+                  <div className="extra-meta">
+                    <span className="extra-dates">{item.dates}</span>
+                    <span className="extra-org">{item.org}</span>
+                  </div>
+                  <div className="extra-body">
+                    <strong>{item.role}</strong>
+                    <span>{item.note}</span>
+                  </div>
+                </li>
+              ))}
+            </ul>
           </section>
 
           <section className="page-section" id="hobbies">
