@@ -391,8 +391,14 @@ function ProjectsArchive({ expanded = false }) {
   const visibleProjects = expanded ? projects : projects.slice(0, 4)
   const featured = visibleProjects.find((project) => project.feature) ?? visibleProjects[0]
   const remaining = visibleProjects.filter((project) => project.id !== featured?.id)
-  const leftColumnProjects = remaining.slice(0, 1)
-  const rightColumnProjects = remaining.slice(1)
+
+  // Preview: keep featured + one card on the left. Full archive: balance both columns.
+  const leftColumnProjects = expanded
+    ? remaining.slice(0, Math.ceil(remaining.length / 2))
+    : remaining.slice(0, 1)
+  const rightColumnProjects = expanded
+    ? remaining.slice(Math.ceil(remaining.length / 2))
+    : remaining.slice(1)
 
   return (
     <div className={`projects-archive ${expanded ? 'expanded' : ''}`}>
@@ -782,7 +788,7 @@ function Portfolio() {
 
         <footer className="page-footer">
           <div className="footer-brand">
-            <img src="/favicon.png" alt="Vidit Gupta brand mark" width="40" height="40" />
+            <img src="/favicon.png" alt="Vidit Gupta brand mark" width="32" height="32" />
             <div>
               <strong>Vidit Gupta</strong>
               <span>ML Research · IT @ DJSCE</span>

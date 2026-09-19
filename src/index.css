@@ -12,7 +12,7 @@
   --red: #b02d21;
   --white: #ffffff;
   --shadow-ink: #1c1b1b;
-  --sidebar-width: 320px;
+  --sidebar-width: 270px;
   --serif: 'EB Garamond', Georgia, serif;
   --sans: Inter, system-ui, sans-serif;
   --mono: 'JetBrains Mono', Consolas, monospace;
@@ -20,7 +20,7 @@
   color: var(--ink);
   background: var(--background);
   font-family: var(--sans);
-  font-size: 16px;
+  font-size: 14px;
   font-synthesis: none;
   line-height: 1.6;
   text-rendering: optimizeLegibility;
